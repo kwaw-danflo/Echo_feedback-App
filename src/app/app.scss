@@ -14,3 +14,42 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.tabbar{
+    background-color: #0B1C33!important;
+}
+
+ .tab-button, .tab-button-icon{
+
+    color: #6F9EBE !important;
+}
+
+// .tabs-md .tab-button  {
+//     color: #EEE!important;
+//     padding: 0;
+// }
+
+// .tabs-md .tab-button-icon[aria-selected=true]  {
+//     color: #EEE!important;
+//     padding: 0;
+// }
+
+
+// .tabs-md .tab-button-icon[aria-selected=true]{
+//     color: #EEE!important;
+
+// }
+
+ion-content{
+    background: #EEE !important;
+}
+
+.header-image{
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    // width: 50% !important;
+
+}
+

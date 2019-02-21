@@ -1,0 +1,36 @@
+<ion-header>
+  <!-- <ion-navbar>
+    <img src="../../assets/imgs/header.png" class="header-image">
+  </ion-navbar> -->
+
+  
+</ion-header>
+
+<ion-content padding class="no-scroll">
+  <img src="../../assets/imgs/header.png" class="header-image">
+
+  <form (ngSubmit)="login()">
+    <!-- <ion-item>
+      <ion-label><ion-icon name="mail"></ion-icon></ion-label>
+      <ion-input type="text" [(ngModel)]="user.email" name="email" placeholder="Student email address"></ion-input>
+    </ion-item> -->
+    <ion-item>
+      <ion-label><ion-icon name="person"></ion-icon></ion-label>
+      <ion-input type="text" [(ngModel)]="user.id" name="id" placeholder="Student id number"></ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label><ion-icon name="person"></ion-icon></ion-label>
+      <ion-input type="text" [(ngModel)]="user.firstName" name="firstName"placeholder="first name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><ion-icon name="person"></ion-icon></ion-label>
+      <ion-input type="text" [(ngModel)]="user.lastName" name="lastName"placeholder="last name "></ion-input>
+    </ion-item> -->
+    <ion-item>
+      <ion-label><ion-icon name="key"></ion-icon></ion-label>
+      <ion-input type="password" [(ngModel)]="user.password" name="password" placeholder="password"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" round >LOGIN</button>
+  </form>
+  <p class="center">New user? <a (click)="goSignup()" >sign up</a></p>
+</ion-content>

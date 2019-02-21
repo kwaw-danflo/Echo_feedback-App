@@ -1,0 +1,48 @@
+page-signup ion-content{
+    background: linear-gradient(#31B2F7 , #50E0DF) !important;
+    color: #fff !important;
+
+}
+.center
+{
+    text-align: center !important;
+}
+
+ .no-scroll {
+     .scroll-content{
+    overflow-y: hidden !important;
+     }
+}
+
+form button{
+    color: #000 !important;
+    background-color: #fff !important;
+    margin-left:  auto !important;
+    margin-right: auto !important;
+    margin-top:  30px !important;
+    display: block !important;
+}
+form ion-item
+{
+    background-color: transparent !important;
+}
+
+form ion-item
+{
+    background-color: transparent !important;
+}
+
+form ion-label
+{
+    color: #fff !important;
+}
+
+form{
+    width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 30% !important;
+}
+::placeholder{
+    color: #fff !important ;
+}
