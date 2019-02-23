@@ -10,41 +10,41 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class PostProvider {
 
-  // apiBaseUrl: string = '';
+  apiBaseUrl: string = '';
 
   constructor(public http: HttpClient) {
     
-    // this.apiBaseUrl = 'http://localhost:3000/api/';
+    this.apiBaseUrl = 'https://uniapp-api.herokuapp.com/api/';
 
   }
-  // getPost(id){
+  getPost(id){
 
-  //   return new Promise(resolve => {
-  //     this.http.get(this.apiBaseUrl + 'Posts/' + id).subscribe(data => {
-  //       resolve(data);
-  //     },
-  //       err => {
-  //         console.log(err);
-  //       }
-  //     )
-  //   });
+    return new Promise(resolve => {
+      this.http.get(this.apiBaseUrl + 'Posts/' + id).subscribe(data => {
+        resolve(data);
+      },
+        err => {
+          console.log(err);
+        }
+      )
+    });
     
 
-  // }
+  }
 
-  // getPosts(){
+  getPosts(){
 
-  //   return new Promise(resolve => {
-  //     this.http.get(this.apiBaseUrl + 'Posts').subscribe(data => {
-  //       resolve(data);
-  //     },
-  //       err => {
-  //         console.log(err);
-  //       }
-  //     )
-  //   });
+    return new Promise(resolve => {
+      this.http.get(this.apiBaseUrl + 'Posts').subscribe(data => {
+        resolve(data);
+      },
+        err => {
+          console.log(err);
+        }
+      )
+    });
     
 
-  // }
+  }
 
 }

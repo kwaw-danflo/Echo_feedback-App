@@ -11,21 +11,21 @@ import { PostProvider } from '../../providers/post/post';
   templateUrl: 'post.html',
 })
 export class PostPage {
-// postId;
-// post:any={} ;
+postId;
+post:any={} ;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public postProvider: PostProvider) {
-    // this.postId = this.navParams.get('id');
-    // this.getPost(this.postId);
+    this.postId = this.navParams.get('id');
+    this.getPost(this.postId);
     
   }
 
-  // getPost(id){
-  //   this.postProvider.getPost(id).then(data =>{
-  //     this.post = data;
-  //     console.log(data);
-  //   })
-  // }
+  getPost(id){
+    this.postProvider.getPost(id).then(data =>{
+      this.post = data;
+      console.log(data);
+    })
+  }
 
  
   

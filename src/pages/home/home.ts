@@ -10,25 +10,25 @@ import { PostProvider } from '../../providers/post/post';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  // postList;
+  postList;
 
   constructor(public navCtrl: NavController, public postProvider:PostProvider ) {
-    // this.getPosts();
+    this.getPosts();
   }
 
   
-  // viewPost(id) {
-  //   this.navCtrl.push(PostPage,{id:id});
+  viewPost(id) {
+    this.navCtrl.push(PostPage,{id:id});
      
-  // }
+  }
 
-  // getPosts(){
-  //   this.postProvider.getPosts().then(data =>{
-  //     this.postList = data;
+  getPosts(){
+    this.postProvider.getPosts().then(data =>{
+      this.postList = data;
 
       
-  //   })
-  // }
+    })
+  }
 
 }
 
