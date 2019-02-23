@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { InfoPage } from '../pages/info/info';
 import { CampusPage } from '../pages/campus/campus';
@@ -16,7 +17,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { ServicesProvider } from '../providers/services/services';
+import { PostProvider } from '../providers/post/post';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { ServicesProvider } from '../providers/services/services';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp, {
       
     }
@@ -46,7 +49,7 @@ import { ServicesProvider } from '../providers/services/services';
        { component: TalkPage, name: 'Talk', segment: 'talk' },
        { component: LoginPage, name: 'Login', segment: 'login' },
        { component: SignupPage, name: 'Signup', segment: 'signup' },
-      //  { component: PostPage, name: 'Post', segment: 'post/:postId' }
+       { component: PostPage, name: 'Post', segment: 'post/:postId' }
        
      ]
    }
@@ -70,7 +73,8 @@ import { ServicesProvider } from '../providers/services/services';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ServicesProvider
+    PostProvider
+    
   ]
 })
 export class AppModule {}

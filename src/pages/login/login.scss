@@ -1,8 +1,11 @@
 page-login ion-content{
-    background: linear-gradient(#31B2F7 , #50E0DF) !important;
+    background-image:url(../../assets/imgs/loginBackground.png) ;
+    background-size: cover;
+    background-position: center;
     color: #fff !important;
 
 }
+// linear-gradient(#31B2F7 , #50E0DF) !important;
 .center
 {
     text-align: center !important;

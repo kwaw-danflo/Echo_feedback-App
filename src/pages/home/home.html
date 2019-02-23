@@ -6,15 +6,28 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card style="overflow:visible">
-    <ion-card-header>
-     What We Think About the KNUST Student Demonstrations
-    </ion-card-header>
-    <ion-card-content>
-      The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
-    </ion-card-content>
-    
-  </ion-card>
+    <!-- <div *ngFor="let post of postList">
+        <ion-card (click)="viewPost(post.id)"> 
+            <ion-grid>
+              <ion-row>
+                  <ion-col col-9>
+                      <ion-card-header text-wrap>
+                          {{post.title}}
+                        </ion-card-header>
+                        <ion-card-content>
+                          {{post.content}}
+                        </ion-card-content>
+                  </ion-col>
+                  <ion-col col-3>
+                      <img src = {{post.imageLink}} />
+                      
+                  </ion-col>
+              </ion-row>
+              
+            </ion-grid>
+          </ion-card>
+        </div>
+     -->
 
-  <button (click)='move()'>click me</button>
+ 
 </ion-content>

@@ -15,7 +15,7 @@
       <ion-input type="text" [(ngModel)]="regData.email" name="email" placeholder="Student email address"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label><ion-icon name="person"></ion-icon></ion-label>
+      <ion-label><ion-icon name="school"></ion-icon></ion-label>
       <ion-input type="text" [(ngModel)]="regData.id" name="id" placeholder="Student id number"></ion-input>
     </ion-item>
     <ion-item>
@@ -32,5 +32,5 @@
     </ion-item>
     <button ion-button type="submit" round >SIGN UP</button>
   </form>
-  <p class="center">Already have and account? <a (click)="goLogin()">login</a></p>
+  <p class="center">Already have and account? <a (click)="goLogin()" style="color:#223DC7">Login</a></p>
 </ion-content>
