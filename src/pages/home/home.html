@@ -5,19 +5,21 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
     <div *ngFor="let post of postList">
-        <ion-card (click)="viewPost(post.id)"> 
+        <ion-card (click)="viewPost(post.id)" class="card"> 
             <ion-grid>
               <ion-row>
                   <ion-col col-9>
                       <ion-card-header text-wrap>
                           {{post.title}}
                         </ion-card-header>
-                        <ion-card-content>
+                        <ion-card-content class="wrap-text">
                           {{post.content}}
                         </ion-card-content>
+                        <ion-note>Posted on: {{post.date | date}}</ion-note>
                   </ion-col>
+                  
                   <ion-col col-3>
                       <img src = {{post.imageLink}} />
                       

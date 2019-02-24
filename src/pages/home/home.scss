@@ -2,3 +2,19 @@ page-home ion-content{
     background-color: #EEE !important;
 
 }
+
+ion-card{
+    display: flex;
+    flex-direction: column;
+    width: 95% !important;
+    height: 135px !important;
+    border-radius: 8px !important;
+    background-color: white !important;   
+    box-shadow: none !important;
+  }
+
+  .wrap-text {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
