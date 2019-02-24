@@ -4,24 +4,20 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card>
-
-    <!-- <ion-card-header>
-      Card Header
-    </ion-card-header> -->
-  
+<ion-content >
+  <div *ngFor="let info of infoList">
+  <ion-card (click)="viewInfo(info.id)">
     <ion-card-content>
       <ion-grid>
         <ion-row>
-          <ion-col col-4><img src="../../assets/imgs/header.png"></ion-col>
+          <ion-col col-4><img src={{info.imageLink}}></ion-col>
           <ion-col col-8>
             <ion-row>
-              <p class="info-card-header">This does not really make sense but we're testing so deal with it.</p>
+              <p class="info-card-header">{{info.title}}</p>
             </ion-row>
             <ion-row>
-              <ion-col col-6><p>team uni</p></ion-col>
-              <ion-col col-6><p style="float:right!">today</p></ion-col>
+              <ion-col col-6><ion-note>team uni</ion-note></ion-col>
+              <ion-col col-6><ion-note style="float:right!important">today</ion-note></ion-col>
             </ion-row>
             </ion-col>
         </ion-row>
@@ -32,4 +28,5 @@
     </ion-card-content>
   
   </ion-card>
+</div>
 </ion-content>

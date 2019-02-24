@@ -12,12 +12,14 @@ import { TalkPage } from '../pages/talk/talk';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import{PostPage} from '../pages/post/post';
+import{infoDetailPage} from '../pages/infoDetail/infoDetail'
 import { TabsPage } from '../pages/tabs/tabs';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PostProvider } from '../providers/post/post';
+import { InfoProvider } from '../providers/info/info';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { PostProvider } from '../providers/post/post';
     TabsPage,
      LoginPage,
      SignupPage,
-     PostPage
+     PostPage,
+     infoDetailPage
      
   ],
   imports: [
@@ -49,7 +52,8 @@ import { PostProvider } from '../providers/post/post';
        { component: TalkPage, name: 'Talk', segment: 'talk' },
        { component: LoginPage, name: 'Login', segment: 'login' },
        { component: SignupPage, name: 'Signup', segment: 'signup' },
-       { component: PostPage, name: 'Post', segment: 'post/:postId' }
+       { component: PostPage, name: 'Post', segment: 'post/:postId' },
+       { component: PostPage, name: 'infoDetail', segment: 'infoDetail/:infoId' }
        
      ]
    }
@@ -67,13 +71,15 @@ import { PostProvider } from '../providers/post/post';
     TabsPage,
     LoginPage,
     SignupPage ,
-    PostPage
+    PostPage,
+    infoDetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PostProvider
+    PostProvider,
+    InfoProvider
     
   ]
 })
