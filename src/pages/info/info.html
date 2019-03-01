@@ -8,15 +8,15 @@
   <div *ngFor="let info of infoList">
   <ion-card (click)="viewInfo(info.id)">
     <ion-card-content>
-      <ion-grid>
+      <ion-grid >
         <ion-row>
-          <ion-col col-4><img src={{info.imageLink}}></ion-col>
-          <ion-col col-8>
+          <ion-col col-3><img src={{info.imageLink}}></ion-col>
+          <ion-col col-9 >
             <ion-row>
               <p class="info-card-header">{{info.title}}</p>
             </ion-row>
-            <ion-row>
-              <ion-col col-6><ion-note>team uni</ion-note></ion-col>
+            <ion-row style="margin-top: 30px;" > 
+              <ion-col col-6><ion-note style="float:left!important">team uni</ion-note></ion-col>
               <ion-col col-6><ion-note style="float:right!important">today</ion-note></ion-col>
             </ion-row>
             </ion-col>
@@ -29,4 +29,6 @@
   
   </ion-card>
 </div>
+
+
 </ion-content>

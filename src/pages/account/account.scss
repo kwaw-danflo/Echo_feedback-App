@@ -1,3 +1,37 @@
 page-account ion-content {
     background: #EEE !important;
 }
+
+.usrCard{
+
+    background:linear-gradient(to right,#31B2F7 , #50E0DF) !important;
+
+}
+ 
+ion-avatar,
+ion-avatar > img{
+    border-radius:50%;
+    height:100px;
+    width:100px;
+}
+
+.my-btn{
+    width: 50px !important;
+    height:  15px !important;
+}
+.color{
+    color: #EEE !important;
+}
+
+ion-icon{
+    color: #31B2F7 !important;
+}
+
+button{
+    margin: 10px !important ;
+    // margin-right: 10px !important ;
+    // margin-bottom: 10px !important;
+     height: 9vh;
+   
+}
+

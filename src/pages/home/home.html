@@ -6,6 +6,7 @@
 </ion-header>
 
 <ion-content>
+  
     <div *ngFor="let post of postList">
         <ion-card (click)="viewPost(post.id)" class="card"> 
             <ion-grid>
@@ -20,8 +21,8 @@
                         <ion-note>Posted on: {{post.date | date}}</ion-note>
                   </ion-col>
                   
-                  <ion-col col-3>
-                      <img src = {{post.imageLink}} />
+                  <ion-col col-3 >
+                      <img  src = {{post.imageLink}} />
                       
                   </ion-col>
               </ion-row>
