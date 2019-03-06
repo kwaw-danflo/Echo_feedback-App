@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController,App } from 'ionic-angular';
-import{SignupPage} from '../signup/signup'
-import {TabsPage} from '../tabs/tabs'
+import { NavController,App, AlertController, LoadingController, Loading, Alert } from 'ionic-angular';
+import{SignupPage} from '../signup/signup';
+import {TabsPage} from '../tabs/tabs';
 
+
+import { AuthenticationProvider } from '../../providers/authentication/authentication';
 
 @Component({
   selector: 'page-login',
@@ -10,35 +12,67 @@ import {TabsPage} from '../tabs/tabs'
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController,private app: App) {
+  loading: Loading;
+  user = {email:'', password:''};
+  data:any;
 
-  }
+  constructor(
+    public navCtrl: NavController,
+    private app: App, 
+    private auth: AuthenticationProvider, 
+    private alertControl:AlertController,
+    private loadingControl: LoadingController
+    
+    ) {}
 
-  user={}
-login(){
-console.log(this.user)
-this.app.getRootNav().push(TabsPage)
+    login(){
+      this.showLoading();
+      this.auth.login(this.user).then (result => {
+          this.loading.dismiss();
+          this.data = result;
+          localStorage.setItem('token', this.data.id);
+          console.log(this.data)
+          this.navCtrl.setRoot(TabsPage);
+      }, (err) =>{
+        this.showError("Incorrect Login Details");
+        console.log(err)
+        
+      })
+        
+    
+    
+    
+    }
+
+
+    showLoading() {
+      this.loading = this.loadingControl.create({
+        content: 'Please wait...',
+        dismissOnPageChange: true
+      });
+      this.loading.present();
+    }
+    
+    showError(text) {
+      this.loading.dismiss();
+    
+      let alert = this.alertControl.create({
+        title: 'Fail',
+        subTitle: text,
+        buttons: ['OK']
+      });
+      alert.present();
+    }
+    
+    
+    goSignup(){
+      this.app.getRootNav().push(SignupPage)
+    }
+
+    
+  
+
+  
+
 }
 
-goSignup(){
-  this.app.getRootNav().push(SignupPage)
-}
-
-// ionViewWillEnter() {
-//   let tabs = document.querySelectorAll('.tabbar');
-//   if ( tabs !== null ) {
-//     Object.keys(tabs).map((key) => {
-//       tabs[ key ].style.transform = 'translateY(56px)';
-//     });
-//   } // end if
-// }
-
-// ionViewDidLeave() {
-//   let tabs = document.querySelectorAll('.tabbar');
-//   if ( tabs !== null ) {
-//     Object.keys(tabs).map((key) => {
-//       tabs[ key ].style.transform = 'translateY(0)';
-//     });
-//   } // end if
-// }
-}
