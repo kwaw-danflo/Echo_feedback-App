@@ -15,7 +15,7 @@ export class PostProvider {
   constructor(public http: HttpClient) {
     
     this.apiBaseUrl = 'https://uniapp-api.herokuapp.com/api/';
-
+ 
   }
   getPost(id){
 

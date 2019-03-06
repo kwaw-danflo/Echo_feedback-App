@@ -9,28 +9,32 @@
 <ion-content padding class="no-scroll">
   <img src="../../assets/imgs/header.png" class="header-image">
 
-  <form (ngSubmit)="register()">
+  <form (ngSubmit)="register()" #regForm="ngForm">
     <ion-item>
       <ion-label><ion-icon name="mail"></ion-icon></ion-label>
-      <ion-input type="text" [(ngModel)]="regData.email" name="email" placeholder="Student email address"></ion-input>
+      <ion-input type="email" [(ngModel)]="regData.email" name="email" placeholder="Student email address" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label><ion-icon name="school"></ion-icon></ion-label>
-      <ion-input type="text" [(ngModel)]="regData.id" name="id" placeholder="Student id number"></ion-input>
+      <ion-input type="text" [(ngModel)]="regData.studentID" name="studentID" placeholder="Student ID number" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label><ion-icon name="person"></ion-icon></ion-label>
-      <ion-input type="text" [(ngModel)]="regData.firstName" name="firstName"placeholder="first name"></ion-input>
+      <ion-input type="text" [(ngModel)]="regData.firstName" name="firstName"placeholder="first name" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label><ion-icon name="person"></ion-icon></ion-label>
-      <ion-input type="text" [(ngModel)]="regData.lastName" name="lastName"placeholder="last name "></ion-input>
+      <ion-input type="text" [(ngModel)]="regData.lastName" name="lastName"placeholder="last name " required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label><ion-icon name="key"></ion-icon></ion-label>
-      <ion-input type="password" [(ngModel)]="regData.password" name="password" placeholder="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="regData.password" name="password" placeholder="password" required></ion-input>
     </ion-item>
-    <button ion-button type="submit" round >SIGN UP</button>
+    <ion-item>
+    <ion-label><ion-icon name="key"></ion-icon></ion-label>
+    <ion-input type="password" [(ngModel)]="regData.confirmPassword" name="confirmPassword" placeholder="Confirm password" required></ion-input>
+  </ion-item>
+    <button ion-button type="submit" round [disabled]="!regForm.form.valid">SIGN UP</button>
   </form>
   <p class="center">Already have and account? <a (click)="goLogin()" style="color:#223DC7">Login</a></p>
 </ion-content>

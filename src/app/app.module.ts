@@ -20,6 +20,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PostProvider } from '../providers/post/post';
 import { InfoProvider } from '../providers/info/info';
+import { AuthenticationProvider } from '../providers/authentication/authentication';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { InfoProvider } from '../providers/info/info';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PostProvider,
-    InfoProvider
+    InfoProvider,
+    AuthenticationProvider
     
   ]
 })
