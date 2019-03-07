@@ -31,7 +31,8 @@ export class LoginPage {
           this.loading.dismiss();
           this.data = result;
           localStorage.setItem('token', this.data.id);
-          console.log(this.data)
+          
+
           this.navCtrl.setRoot(TabsPage);
       }, (err) =>{
         this.showError("Incorrect Login Details");

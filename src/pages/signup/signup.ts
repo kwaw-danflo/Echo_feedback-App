@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController,App, AlertController } from 'ionic-angular';
 import{LoginPage} from '../login/login'
-import {TabsPage} from '../tabs/tabs'
+
 
 import { AuthenticationProvider } from '../../providers/authentication/authentication';
-import { Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'page-signup',
@@ -12,7 +12,8 @@ import { Title } from '@angular/platform-browser';
 })
 export class SignupPage {
   registrationSuccess = false;
-  regData = {email:'', studentID:'',firstName:'', lastName:'', password:'', confirmPassword:''};
+  regData = {email:'', studentID:'',firstName:'', lastName:'', password: ''};
+  confirm = {password:''}
 
   constructor(
     public navCtrl: NavController, 
@@ -24,7 +25,7 @@ export class SignupPage {
   }
 
   register(){
-    if (this.regData.password != this.regData.confirmPassword) {
+    if (this.regData.password != this.confirm.password) {
       this.showPopup("Error", 'The passwords do not match.');
     } else {
       this.auth.register(this.regData).then(success => {

@@ -1,5 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AuthenticationProvider } from '../authentication/authentication';
+
+
 
 /*
   Generated class for the PostProvider provider.
@@ -11,16 +14,17 @@ import { Injectable } from '@angular/core';
 export class PostProvider {
 
   apiBaseUrl: string = '';
+  access_token: string = '';
 
-  constructor(public http: HttpClient) {
-    
+  constructor(public http: HttpClient, private auth: AuthenticationProvider) {
+     this.access_token = localStorage.getItem('token');
     this.apiBaseUrl = 'https://uniapp-api.herokuapp.com/api/';
- 
+      // this.apiBaseUrl = 'http://localhost:3000/api/'
   }
   getPost(id){
 
     return new Promise(resolve => {
-      this.http.get(this.apiBaseUrl + 'Posts/' + id).subscribe(data => {
+      this.http.get(this.apiBaseUrl + 'Posts/' + id + '?access_token=' + this.access_token).subscribe(data => {
         resolve(data);
       },
         err => {
@@ -31,12 +35,13 @@ export class PostProvider {
     
 
   }
-
   getPosts(){
 
     return new Promise(resolve => {
-      this.http.get(this.apiBaseUrl + 'Posts').subscribe(data => {
+      
+      this.http.get(this.apiBaseUrl + 'Posts/?access_token=' + this.access_token ).subscribe(data => {
         resolve(data);
+    
       },
         err => {
           console.log(err);

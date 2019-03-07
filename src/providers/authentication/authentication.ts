@@ -12,28 +12,24 @@ export class AuthenticationProvider {
 
   credentials: any = {};
   authBaseURL: string = '';
-  // registerURL: string = '';
-  // loginURL: string = '';
-  // logoutURL: string = '';
+
   
   
-  token: string;
   data: any = {};
 
-  constructor(public http: HttpClient) {
-    this.authBaseURL = 'https://uniapp-api.herokuapp.com/api/Students';
-    // this.registerURL = 'http://localhost:3000/api/Students';
-    // this.loginURL = 'http://localhost:3000/api/Students/login';
-    // this.logoutURL = 'http://localhost:3000/api/Students/logout'
-  }
 
+  constructor(public http: HttpClient) {
+    // this.authBaseURL = 'http://localhost:3000/api/Students';
+    this.authBaseURL = 'https://uniapp-api.herokuapp.com/api/Students';
+  
+  }
   register(credentials){
 
     return new Promise(resolve =>{
       let headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
-      this.http.post(this.authBaseURL, credentials).subscribe(data =>{
-        resolve(data);
+      this.http.post(this.authBaseURL, credentials).subscribe(res =>{
+        resolve(res);
       }, err =>{
         console.log(err)
       })
@@ -44,9 +40,8 @@ export class AuthenticationProvider {
       return new Promise((resolve, reject) =>{
         let headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
-
-        this.http.post(this.authBaseURL + '/login', credentials, {headers: headers}).subscribe(res =>{
-          resolve(res);
+        this.http.post(this.authBaseURL + '/login', credentials, {headers: headers}).subscribe(data =>{ 
+          resolve(data);   
         }, error =>{
           reject(error);
         });

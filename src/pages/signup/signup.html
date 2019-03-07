@@ -3,7 +3,7 @@
     <img src="../../assets/imgs/header.png" class="header-image">
   </ion-navbar> -->
 
-  
+
 </ion-header>
 
 <ion-content padding class="no-scroll">
@@ -32,7 +32,7 @@
     </ion-item>
     <ion-item>
     <ion-label><ion-icon name="key"></ion-icon></ion-label>
-    <ion-input type="password" [(ngModel)]="regData.confirmPassword" name="confirmPassword" placeholder="Confirm password" required></ion-input>
+    <ion-input type="password" [(ngModel)]="confirm.password" name="confirmPassword" placeholder="Confirm password" required></ion-input>
   </ion-item>
     <button ion-button type="submit" round [disabled]="!regForm.form.valid">SIGN UP</button>
   </form>
