@@ -28,7 +28,7 @@ export class AuthenticationProvider {
     return new Promise(resolve =>{
       let headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
-      this.http.post(this.authBaseURL, credentials).subscribe(res =>{
+      this.http.post(this.authBaseURL, credentials, {headers: headers}).subscribe(res =>{
         resolve(res);
       }, err =>{
         console.log(err)
