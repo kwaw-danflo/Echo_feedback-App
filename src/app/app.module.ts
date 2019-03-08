@@ -13,6 +13,7 @@ import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import{PostPage} from '../pages/post/post';
 import{infoDetailPage} from '../pages/infoDetail/infoDetail'
+import{ ReportPage} from '../pages/IssueReport/issueReport'
 import { TabsPage } from '../pages/tabs/tabs';
 
 
@@ -35,7 +36,8 @@ import { AuthenticationProvider } from '../providers/authentication/authenticati
      LoginPage,
      SignupPage,
      PostPage,
-     infoDetailPage
+     infoDetailPage,
+     ReportPage
      
   ],
   imports: [
@@ -53,6 +55,7 @@ import { AuthenticationProvider } from '../providers/authentication/authenticati
        { component: TalkPage, name: 'Talk', segment: 'talk' },
        { component: LoginPage, name: 'Login', segment: 'login' },
        { component: SignupPage, name: 'Signup', segment: 'signup' },
+       { component: ReportPage, name: 'issueReport', segment: 'issueReport' },
        { component: PostPage, name: 'Post', segment: 'post/:postId' },
        { component: PostPage, name: 'infoDetail', segment: 'infoDetail/:infoId' }
        
@@ -73,7 +76,8 @@ import { AuthenticationProvider } from '../providers/authentication/authenticati
     LoginPage,
     SignupPage ,
     PostPage,
-    infoDetailPage
+    infoDetailPage,
+    ReportPage
   ],
   providers: [
     StatusBar,

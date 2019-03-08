@@ -22,7 +22,7 @@
       <ion-label><ion-icon name="key"></ion-icon></ion-label>
       <ion-input type="password" [(ngModel)]="user.password" name="password" placeholder="password"></ion-input>
     </ion-item>
-    <button ion-button type="submit" round [disabled]="!loginForm.form.valid">LOGIN</button>
+    <button ion-button type="submit" round [disabled]="!loginForm.form.valid" style="display:block !important">LOGIN</button>
   </form>
   <p class="center">New user? <a (click)="goSignup()" style="color:#223DC7">Sign Up</a></p>
 </ion-content>

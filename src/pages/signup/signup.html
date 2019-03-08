@@ -38,7 +38,7 @@
     <ion-input type="password" [(ngModel)]="regData.confirmPassword" name="confirmPassword" placeholder="Confirm password" required></ion-input>
 >>>>>>> 483b1b14d39ad1081585658420ddfd3e436d399f
   </ion-item>
-    <button ion-button type="submit" round [disabled]="!regForm.form.valid">SIGN UP</button>
+    <button ion-button type="submit" round [disabled]="!regForm.form.valid" style="display:block !important">SIGN UP</button>
   </form>
   <p class="center">Already have and account? <a (click)="goLogin()" style="color:#223DC7">Login</a></p>
 </ion-content>
