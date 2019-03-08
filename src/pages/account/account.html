@@ -25,43 +25,49 @@
 </ion-card>
  
 <ion-list no-lines >
-    <button ion-item  color="light">
+      <button *ngFor="let child of childPages" ion-item  color="light" (click)="routeMe(child)"> 
+        <ion-icon [name]="child.icon" item-start></ion-icon>
+        {{child.title}}
+    </button> 
+    <!-- <button ion-item  color="light" (click)= "goBookmark()"> 
         <ion-icon name="bookmark" item-start></ion-icon>
         Bookmarks
-    </button> 
+    </button>  -->
 
-    <button ion-item   color="light">
+    <!-- <button ion-item   color="light" (click)= "goInfo()">
         <ion-icon name="notifications" item-start></ion-icon>
         Information Channels
     </button> 
 
-    <button ion-item  color="light" (click) = "go">
+    <button ion-item  color="light" (click) = "goIssue()">
         <ion-icon name="information-circle" item-start></ion-icon>
         Report an Issue 
     </button> 
 
-    <button ion-item   color="light">
+    <button ion-item   color="light" (click)= "goPolls()">
         <ion-icon name="stats" item-start></ion-icon>
        Polls & Surveys 
     </button> 
-    <button ion-item   color="light">
+
+    <button ion-item   color="light" (click)= "goTrade()">
         <ion-icon name="cash" item-start></ion-icon>
        Uni Trade Account 
     </button> 
-    <button ion-item   color="light">
+
+    <button ion-item   color="light" (click)= "goLinks()">
         <ion-icon name="laptop" item-start></ion-icon>
         Useful Links 
     </button> 
 
-    <button ion-item   color="light" detail="true">
+    <button ion-item   color="light" detail="true" (click)= "goContacts()">
         <ion-icon name="call" item-start></ion-icon>
-
         Useful Contacts
     </button> 
+
     <button ion-item color="light" detail="true" (click) = "logout()">
       <ion-icon name="log-out" item-start></ion-icon>
-
       Logout
-  </button> 
+  </button>  -->
+
   </ion-list>
 </ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <!-- <img src="../../assets/imgs/header.png" class="header-image"> -->
+      <ion-title style="text-align:left">Report An Issue</ion-title>
+
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content padding >
+  <!-- <img src="../../assets/imgs/header.png" class="header-image"> -->
+<p style="text-align:center; color:#000">
+  kindly supply the information below to report an issue. We will make sure to send to the responsible authority
+</p>
+  <form (ngSubmit)="reportIssue()" >
+    <ion-item no-lines class="my-item">
+        <ion-label>Select Issue Category</ion-label>
+    <ion-select  [(ngModel)]="report.category"  name="category" interface="popover">
+      <ion-option value="hall">Hall</ion-option>
+      <ion-option value="ugcs">UGCS</ion-option>
+    </ion-select>
+
+
+  </ion-item>
+
+  <ion-item  no-lines class="my-item">
+
+      <ion-input type="text" [(ngModel)]="report.fullName" name="fullName" placeholder="Your Full Name" required></ion-input>
+    </ion-item>
+    <ion-item  no-lines class="my-item">
+
+        <ion-input type="text" [(ngModel)]="report.studentID" name="studentID" placeholder="  Your Student ID " required></ion-input>
+      </ion-item>
+      <ion-item  no-lines class="my-item">
+
+          <ion-textarea rows= 10 [(ngModel)]="report.description" name="description" placeholder="Issue Description" required></ion-textarea>
+        </ion-item>
+    <button ion-button type="submit" round style="display:block !important">SEND</button>
+  </form>
+
+</ion-content>
