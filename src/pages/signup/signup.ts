@@ -1,27 +1,27 @@
 import { Component } from '@angular/core';
 import { NavController,App, AlertController } from 'ionic-angular';
 import{LoginPage} from '../login/login'
-
-
-
-
-
 import { AuthenticationProvider } from '../../providers/authentication/authentication';
-import { Title } from '@angular/platform-browser';
+
+
+
+
+
 
 @Component({
   selector: 'page-signup',
   templateUrl: 'signup.html'
 })
 export class SignupPage {
-  registrationSuccess = false;
+  registrationSuccess:boolean = false;
   regData = {email:'', studentID:'',firstName:'', lastName:'', password:'', confirmPassword:''};
+
 
   constructor(
     public navCtrl: NavController, 
-    private app:App, 
-    private auth: AuthenticationProvider, 
-    private alertControl: AlertController
+    private app:App,  
+    private alertControl: AlertController,
+    private auth: AuthenticationProvider
     ) {
    
   }

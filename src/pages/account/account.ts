@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController,IonicPage } from 'ionic-angular';
+import {App, NavController,IonicPage,LoadingController, ToastController} from 'ionic-angular';
 import {ReportPage} from '../IssueReport/IssueReport';
 import {infoChannelPage} from '../infoChannel/infoChannel';
 import {usefulLinksPage} from '../usefulLinks/usefulLinks';
 import {TradePage} from '../trade/trade';
+
+import { AccountProvider } from '../../providers/account/account';
+import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
@@ -11,10 +14,34 @@ import {TradePage} from '../trade/trade';
   templateUrl: 'account.html'
 })
 export class AccountPage {
+  userData: any = {};
+  loading: any;
+  userid;
+ 
   
-  
-  constructor(public navCtrl: NavController) {
+  constructor(public app: App,public navCtrl: NavController, private accountProvider: AccountProvider,
+                private toastControl: ToastController) {
+    this.userid = localStorage.getItem('userID');
+    this.getUserData(this.userid);
+  }
 
+  getUserData(id) {
+    this.accountProvider.getUserData(id).then(data => {
+      this.userData = data;
+      console.log(data)
+    });
+  }
+
+
+  logout(){
+    this.accountProvider.logout().then(result =>{
+      let nav = this.app.getRootNav();
+      nav.setRoot(LoginPage);
+      this.presentToast('Logged Out.')
+    }, error =>{
+  
+      this.presentToast(error);
+    })
   }
 
   childPages=[{
@@ -61,19 +88,28 @@ export class AccountPage {
     'class':''
     
   },
-  {
-    'id':8,
-    'icon':'log-out',
-    'title':'Logout',
-    'class':''
-
-  },
 ]
-
-
 routeMe(child){
 
 this.navCtrl.push(child.class)
  
+}
+
+
+
+
+presentToast(msg) {
+  let toast = this.toastControl.create({
+    message: msg,
+    duration: 3000,
+    position: 'bottom'
+    
+  });
+
+  toast.onDidDismiss(() => {
+    console.log('Dismissed toast');
+  });
+
+  toast.present();
 }
 }

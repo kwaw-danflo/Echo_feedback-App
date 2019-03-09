@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController,App, AlertController, LoadingController, Loading, Alert } from 'ionic-angular';
+import { NavController,App, AlertController, LoadingController, Loading, Platform } from 'ionic-angular';
 import{SignupPage} from '../signup/signup';
 import {TabsPage} from '../tabs/tabs';
 
 
 import { AuthenticationProvider } from '../../providers/authentication/authentication';
+
 
 @Component({
   selector: 'page-login',
@@ -15,7 +16,7 @@ export class LoginPage {
   loading: Loading;
   user = {email:'', password:''};
   data:any;
-
+    
   constructor(
     public navCtrl: NavController,
     private app: App, 
@@ -31,6 +32,7 @@ export class LoginPage {
           this.loading.dismiss();
           this.data = result;
           localStorage.setItem('token', this.data.id);
+          localStorage.setItem('userID', this.data.userId );
           console.log(this.data)
           this.navCtrl.setRoot(TabsPage);
       }, (err) =>{

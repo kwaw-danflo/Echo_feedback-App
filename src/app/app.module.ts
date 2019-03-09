@@ -25,6 +25,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PostProvider } from '../providers/post/post';
 import { InfoProvider } from '../providers/info/info';
 import { AuthenticationProvider } from '../providers/authentication/authentication';
+import { AccountProvider } from '../providers/account/account';
+import { IssueReportProvider } from '../providers/issue-report/issue-report';
 
 
 @NgModule({
@@ -97,7 +99,9 @@ import { AuthenticationProvider } from '../providers/authentication/authenticati
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PostProvider,
     InfoProvider,
-    AuthenticationProvider
+    AuthenticationProvider,
+    AccountProvider,
+    IssueReportProvider
     
   ]
 })
