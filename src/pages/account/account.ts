@@ -4,6 +4,8 @@ import {ReportPage} from '../IssueReport/IssueReport';
 import {infoChannelPage} from '../infoChannel/infoChannel';
 import {usefulLinksPage} from '../usefulLinks/usefulLinks';
 import {TradePage} from '../trade/trade';
+import {BookmarksPage} from '../bookmarks/bookmarks';
+import{PollsPage} from '../polls/polls'
 
 @IonicPage()
 @Component({
@@ -21,7 +23,7 @@ export class AccountPage {
     'id':1,
     'icon':'bookmark',
     'title':'Bookmarks',
-    'class' :''
+    'class' :BookmarksPage
   },
   {
     'id':2,
@@ -40,7 +42,7 @@ export class AccountPage {
     'id':4,
     'icon':'stats',
     'title':'Polls & Surveys',
-    'class':''
+    'class':PollsPage
   },
   {
     'id':5,
@@ -61,13 +63,7 @@ export class AccountPage {
     'class':''
     
   },
-  {
-    'id':8,
-    'icon':'log-out',
-    'title':'Logout',
-    'class':''
 
-  },
 ]
 
 
@@ -75,5 +71,9 @@ routeMe(child){
 
 this.navCtrl.push(child.class)
  
+}
+
+logout(){
+  
 }
 }

@@ -17,6 +17,8 @@ import { ReportPage} from '../pages/IssueReport/IssueReport';
 import { infoChannelPage } from '../pages/infoChannel/infoChannel';
 import { usefulLinksPage} from '../pages/usefulLinks/usefulLinks';
 import { TradePage} from '../pages/trade/trade';
+import { BookmarksPage} from '../pages/bookmarks/bookmarks';
+import { PollsPage} from '../pages/polls/polls';
 import { TabsPage } from '../pages/tabs/tabs';
 
 
@@ -43,6 +45,8 @@ import { AuthenticationProvider } from '../providers/authentication/authenticati
      infoChannelPage,
      usefulLinksPage,
      TradePage,
+     BookmarksPage,
+     PollsPage,
      ReportPage
      
   ],
@@ -64,7 +68,9 @@ import { AuthenticationProvider } from '../providers/authentication/authenticati
        { component: ReportPage, name: 'issueReport', segment: 'issueReport' },
        { component: infoChannelPage, name: 'infoChannel', segment: 'infoChannel' },
        { component: usefulLinksPage, name: 'usefulLinks', segment: 'usefulLinks' },  
-       { component: TradePage, name: 'Trade', segment: 'trade' },     
+       { component: TradePage, name: 'Trade', segment: 'trade' },  
+       { component: BookmarksPage, name: 'Bookmarks', segment: 'bookmarks' },   
+       { component: PollsPage, name: 'Polls', segment: 'polls' },   
        { component: PostPage, name: 'Post', segment: 'post/:postId' },
        { component: PostPage, name: 'infoDetail', segment: 'infoDetail/:infoId' }
        
@@ -89,6 +95,8 @@ import { AuthenticationProvider } from '../providers/authentication/authenticati
     infoChannelPage,
     usefulLinksPage,
     TradePage,
+    BookmarksPage,
+    PollsPage,
     ReportPage
   ],
   providers: [

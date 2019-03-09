@@ -1,0 +1,27 @@
+page-polls ion-content{
+    background-image:url(../../assets/imgs/loginBackground.png) ;
+    background-size: cover;
+    background-position: center;
+
+
+}
+
+.my-segmentbtn{
+ height: 140px !important;
+}
+
+.poll-card{
+    max-height: 60px;
+    border-radius: 4px !important;
+}
+
+.question{
+font-weight: 900;
+
+}
+
+ .alert-wrapper{
+    background: url("../../assets/imgs/pollBg.png");
+    background-size: cover;
+    background-position: center;
+}

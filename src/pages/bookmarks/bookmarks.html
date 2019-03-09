@@ -1,14 +1,14 @@
 <ion-header>
   <ion-navbar>
-    <img src="../../assets/imgs/header.png" class="header-image">
-  
+    <!-- <img src="../../assets/imgs/header.png" class="header-image"> -->
+  <ion-title> Saved Posts </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   
     <div *ngFor="let post of postList">
-        <ion-card (click)="viewPost(post.id)" class="my-card"> 
+        <ion-card (click)="viewPost(post.id)" class="card"> 
             <ion-grid>
               <ion-row>
                   <ion-col col-9>

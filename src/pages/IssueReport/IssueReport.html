@@ -16,7 +16,7 @@
   <form (ngSubmit)="reportIssue()" >
     <ion-item no-lines class="my-item">
         <ion-label>Select Issue Category</ion-label>
-    <ion-select  [(ngModel)]="report.category"  name="category" interface="popover">
+    <ion-select  [(ngModel)]="report.category"  name="category">
       <ion-option value="hall">Hall</ion-option>
       <ion-option value="ugcs">UGCS</ion-option>
     </ion-select>
