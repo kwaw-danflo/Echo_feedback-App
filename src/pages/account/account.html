@@ -15,9 +15,9 @@
       </ion-avatar>
     </ion-col> 
       <ion-col col-8  style="margin-top: 6% ">
-        <h2 class="color">Godfried B Solomon</h2>
-        <h3 class="color">Godfried@ug.st.edu.gh</h3>
-        <h4 class="color">10581360</h4>
+        <h2 class="color">{{userData.firstName}} {{userData.lastName}}</h2>
+        <h3 class="color">{{userData.email}}</h3>
+        <h4 class="color">{{userData.studentID}}</h4>
         <button style="float:right"ion-button color="light" class="my-btn">edit</button>
       </ion-col> 
     </ion-row>
@@ -63,11 +63,13 @@
         <ion-icon name="call" item-start></ion-icon>
         Useful Contacts
     </button> 
+     -->
 
- -->
+ 
   <button ion-item color="light" detail="true" (click) = "logout()">
       <ion-icon name="log-out" item-start></ion-icon>
       Logout
-  </button>
+  </button> 
+
   </ion-list>
 </ion-content>

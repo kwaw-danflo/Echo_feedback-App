@@ -49,18 +49,7 @@ export class AuthenticationProvider {
   }
 
 
-  logout() {
-    return new Promise((resolve, reject) => {
-      let headers = new HttpHeaders();
-      headers.append('X-Auth-Token', localStorage.getItem('token'));
-
-      this.http.post(this.authBaseURL + '/logout', {}, {headers: headers}).subscribe(res =>{
-        localStorage.clear();
-      }, error =>{
-        reject(error);
-      });
-    });
-  }
+  
 
   
 }
