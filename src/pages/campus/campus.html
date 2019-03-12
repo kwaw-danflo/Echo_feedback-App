@@ -1,9 +1,48 @@
 <ion-header>
   <ion-navbar>
-    <img src="../../assets/imgs/header.png" class="header-image">
+
+    <ion-title>
+      Campus
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-grid>
+    <ion-row class>
+      <ion-col col-4> <button ion-button class="headBtn" clear> <img src="../../assets/imgs/mapBtn.png"></button></ion-col>
+      <ion-col col-4> <button ion-button class="headBtn" clear> <img src="../../assets/imgs/AtoZBtn.png"></button></ion-col>
+      <ion-col col-4> <button ion-button class="headBtn" clear> <img src="../../assets/imgs/c&sBtn.png"></button></ion-col>
 
+    </ion-row>
+    <!-- <div *ngFor="let child of childPages">
+    <ion-card  class="category-card">
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-10>
+                <h5>{{child.title}}</h5>
+
+            </ion-col>
+
+            <ion-col col-2>
+                <ion-icon [name]="child.icon" item-end></ion-icon>
+            </ion-col>
+          </ion-row> 
+        </ion-grid> 
+        
+        
+      </ion-card-content>
+    </ion-card>
+  
+</div> -->
+
+    <ion-list no-lines>
+      <button *ngFor="let child of childPages" ion-item color="light" detail-none class="listBtn">
+        <ion-icon [name]="child.icon" item-end></ion-icon>
+        {{child.title}}
+      </button>
+
+    </ion-list>
+  </ion-grid>
 </ion-content>

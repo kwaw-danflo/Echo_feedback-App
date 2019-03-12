@@ -19,6 +19,7 @@ import { usefulLinksPage} from '../pages/usefulLinks/usefulLinks';
 import { TradePage} from '../pages/trade/trade';
 import { BookmarksPage} from '../pages/bookmarks/bookmarks';
 import { PollsPage} from '../pages/polls/polls';
+import{usefulContactsPage} from '../pages/usefulContacts/usefulContacts'
 import { TabsPage } from '../pages/tabs/tabs';
 
 
@@ -49,6 +50,7 @@ import { IssueReportProvider } from '../providers/issue-report/issue-report';
      TradePage,
      BookmarksPage,
      PollsPage,
+     usefulContactsPage,
      ReportPage
      
   ],
@@ -74,6 +76,7 @@ import { IssueReportProvider } from '../providers/issue-report/issue-report';
        { component: BookmarksPage, name: 'Bookmarks', segment: 'bookmarks' },   
        { component: PollsPage, name: 'Polls', segment: 'polls' },   
        { component: PostPage, name: 'Post', segment: 'post/:postId' },
+       { component: usefulContactsPage, name: 'usefulContacts', segment: 'usefulContacts' },
        { component: PostPage, name: 'infoDetail', segment: 'infoDetail/:infoId' }
        
      ]
@@ -99,7 +102,8 @@ import { IssueReportProvider } from '../providers/issue-report/issue-report';
     TradePage,
     BookmarksPage,
     PollsPage,
-    ReportPage
+    ReportPage,
+    usefulContactsPage
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <!-- <img src="../../assets/imgs/header.png" class="header-image"> -->
+      <!-- <ion-title> Polls & surveys</ion-title> -->
+
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content padding >
+    <div padding>
+        <ion-segment [(ngModel)]="polls" >
+          <ion-segment-button value="Recent" class="my-segmentbtn" >
+           
+            <img src="../../assets/imgs/Group 345.png" >
+         
+          </ion-segment-button>
+
+          <ion-segment-button value="Active" class="my-segmentbtn">
+             
+                  <img src="../../assets/imgs/Group 347.png" >
+                
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      
+      <div [ngSwitch]="polls" no-lines>
+        <ion-list *ngSwitchCase="'Recent'">
+         
+          <ion-card class="poll-card">
+            <ion-card-content>
+              <p class="question">Should the University invest in more shuttles?</p>
+            </ion-card-content>
+          </ion-card>
+        
+            
+        </ion-list>
+      
+        <ion-list *ngSwitchCase="'Active'">
+         
+            <ion-card class="poll-card" (click)="replyPoll()">
+                <ion-card-content>
+                 
+                    <p class="question">Should the University invest in more shuttles?</p>
+                    
+                  
+                  
+                   
+                </ion-card-content>
+              </ion-card>
+            
+        </ion-list>
+      </div>
+
+</ion-content>

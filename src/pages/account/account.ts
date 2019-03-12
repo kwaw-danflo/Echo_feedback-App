@@ -6,7 +6,7 @@ import {usefulLinksPage} from '../usefulLinks/usefulLinks';
 import {TradePage} from '../trade/trade';
 import {BookmarksPage} from '../bookmarks/bookmarks';
 import{PollsPage} from '../polls/polls'
-
+import{usefulContactsPage} from '../usefulContacts/usefulContacts';
 import { AccountProvider } from '../../providers/account/account';
 import { LoginPage } from '../login/login';
 
@@ -87,7 +87,7 @@ export class AccountPage {
     'id':7,
     'icon':'call',
     'title':'Useful Contacts',
-    'class':''
+    'class': usefulContactsPage
     
   },
 ]
