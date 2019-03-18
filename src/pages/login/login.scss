@@ -18,34 +18,38 @@ page-login ion-content{
      }
 }
 
-form button{
+page-login form button{
     color: #000 !important;
     background-color: #fff !important;
     margin-left:  auto !important;
     margin-right: auto !important;
     margin-top:  30px !important;
 }
-form ion-item
+page-login form ion-item
 {
     background-color: transparent !important;
 }
 
-form ion-item
+page-login form ion-item
 {
     background-color: transparent !important;
 }
 
-form ion-label
+page-login form ion-label
 {
     color: #fff !important;
 }
 
-form{
+page-login form{
     width: 80% !important;
     margin-left: auto !important;
     margin-right: auto !important;
     margin-top: 30% !important;
 }
-::placeholder{
-    color: #fff !important ;
+
+page-login{
+    ::placeholder{
+        color: #fff !important;
+    }
+
 }

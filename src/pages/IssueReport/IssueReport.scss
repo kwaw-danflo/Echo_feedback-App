@@ -18,40 +18,49 @@ page-issue ion-content{
      }
 }
 
-form button{
+page-issue form button{
     color: #000 !important;
     background-color: #fff !important;
     margin-left:  auto !important;
     margin-right: auto !important;
     margin-top:  30px !important;
 }
-form ion-item
+
+page-issue form ion-item
 {
     background-color: transparent !important;
 }
 
-form ion-item
+page-issue form ion-item
 {
     background-color: transparent !important;
 }
 
-form ion-label
+page-issue{
+
+    form ion-label
 {
     color: #000 !important;
 }
 
-form{
-    width: 80% !important;
+}
+
+
+page-issue form{
+    width: 85% !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    margin-top: 20% !important;
+    //margin-top: 30px !important;
+}
+page-issue{
+    ::placeholder{
+        color: #000 !important ;
+    }
+
 }
 
-::placeholder{
-    color: #000 !important ;
-}
 
-ion-select {
+page-issue ion-select {
     button{
         display: none !important;
     }
@@ -59,25 +68,24 @@ ion-select {
 }
 
 
-ion-textarea{
+page-issue on-textarea{
     // background: #6F9EBE;
     border-radius: 10px;
 }
 
-// page-issue{
-//     ion-content{
-//         form{
-//             ion-item{
-//                 background: #6F9EBE !important;
-//                 margin: 10px !important;
-//                  border-radius: 10px;
-//             }
-//         }
-//     }
-// }
 
 .my-item{
     background: #C4EEF8 !important;
                 margin: 10px !important;
                  border-radius: 10px;
+}
+
+
+.header-text{
+
+    text-align:justify; 
+    color:#000;
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+    
 }

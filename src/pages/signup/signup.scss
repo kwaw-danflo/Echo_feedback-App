@@ -16,7 +16,7 @@ page-signup ion-content{
      }
 }
 
-form button{
+page-signup form button{
     color: #000 !important;
     background-color: #fff !important;
     margin-left:  auto !important;
@@ -24,27 +24,27 @@ form button{
     margin-top:  30px !important;
    
 }
-form ion-item
+page-signup form ion-item
 {
     background-color: transparent !important;
 }
 
-form ion-item
-{
-    background-color: transparent !important;
-}
 
-form ion-label
+page-signup form ion-label
 {
     color: #fff !important;
 }
 
-form{
+page-signup form{
     width: 80% !important;
     margin-left: auto !important;
     margin-right: auto !important;
     margin-top: 30% !important;
 }
-::placeholder{
-    color: #fff !important ;
+
+page-signup{
+
+    ::placeholder{
+        color: #fff  !important ;
+    }
 }

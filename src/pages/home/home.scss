@@ -3,14 +3,14 @@ page-home ion-content{
 
 }
 
-.my-card{
-    display: flex;
-    flex-direction: column;
+.mynew-card{
+    // display: flex;
+    // flex-direction: column;
     width: 95% !important;
-    height: 135px !important;
-    border-radius: 8px !important;
-    background-color: white !important;   
-    box-shadow: none !important;
+    // height: 135px !important;
+    border-radius: 6px ;
+    // background-color: white !important;   
+    // box-shadow: none !important;
   }
 
   .wrap-text {
@@ -22,3 +22,24 @@ page-home ion-content{
 
 
 
+page-home{
+  ion-icon{
+    padding: 3px ;
+  }
+  ion-card-content{
+    font-size: 10px !important;
+    padding-left: 0px !important
+  }
+  ion-card-header{
+    font-size: 10px !important
+  }
+ ion-note{
+   font-size: 8px !important;
+ }
+}
+
+.img-container{
+  max-width: 100% !important;
+  border-radius: 3px !important; 
+  }
+  

@@ -29,6 +29,15 @@ export class HomePage {
       
     })
   }
+//   clicked:Boolean=false;
+//   heartIcon:string="heart-outline";
+//   toggleHeart(e){
+// console.log(e)
+//    this.clicked=!this.clicked;
 
+// this.heartIcon= this.clicked ? 'heart' : 'heart-outline'
+//   }
+
+  
 }
 

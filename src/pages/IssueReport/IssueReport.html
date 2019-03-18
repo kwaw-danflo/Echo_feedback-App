@@ -8,10 +8,10 @@
 
 </ion-header>
 
-<ion-content padding >
+<ion-content padding no-bounce>
   <!-- <img src="../../assets/imgs/header.png" class="header-image"> -->
-<p style="text-align:center; color:#000">
-  kindly supply the information below to report an issue. We will make sure to send to the responsible authority
+<p  class="header-text">
+  Kindly supply the information below to report an issue. We will make sure to send to the responsible authority
 </p>
   <form (ngSubmit)="reportIssue()" >
     <ion-item no-lines class="my-item">
@@ -33,7 +33,7 @@
     </ion-item>
     <ion-item  no-lines class="my-item">
 
-        <ion-input type="text" [(ngModel)]="report.StudentID" name="studentID" placeholder="  Your Student ID " required></ion-input>
+        <ion-input type="text" [(ngModel)]="report.StudentID" name="studentID" placeholder="Your Student ID " required></ion-input>
       </ion-item>
       <ion-item  no-lines class="my-item">
 

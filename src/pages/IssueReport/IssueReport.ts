@@ -25,10 +25,13 @@ export class ReportPage {
     public toastControl: ToastController,
     public loadingControl: LoadingController
     
-    ) {}
+    ) {
+
+      
+    }
 
 
-
+  
 
 reportIssue(){
     this.issueprovider.sendReport(this.report).then(success => {
