@@ -30,6 +30,7 @@ import { InfoProvider } from '../providers/info/info';
 import { AuthenticationProvider } from '../providers/authentication/authentication';
 import { AccountProvider } from '../providers/account/account';
 import { IssueReportProvider } from '../providers/issue-report/issue-report';
+import { contentFormat } from '../pipes/content-format/content-format';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { IssueReportProvider } from '../providers/issue-report/issue-report';
      BookmarksPage,
      PollsPage,
      usefulContactsPage,
-     ReportPage
+     ReportPage,
+     contentFormat
      
   ],
   imports: [
