@@ -12,7 +12,7 @@
   
       <img src={{post.imageLink}}>
   
-      <ion-card-content text-justify >
+      <ion-card-content text-justify [ngStyle]="{ 'white-space': 'pre-line' }" >
          {{post.content}}
         </ion-card-content>
   
