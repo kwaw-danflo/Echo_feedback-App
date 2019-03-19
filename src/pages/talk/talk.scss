@@ -1,3 +1,13 @@
 page-talk ion-content {
-background: #EEE !important;
+    background-image:url(../../assets/imgs/polls-bg.png) ;
+    background-size: cover;
+    background-position: center;
+    color: #fff !important;
+}
+
+page-talk{
+    .scroll-content{
+        padding: 60px !important;
+        margin-top: 15% !important ;
+    }
 }
