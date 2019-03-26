@@ -25,7 +25,7 @@
 </ion-card>
  
 <ion-list no-lines >
-      <button *ngFor="let child of childPages" ion-item  color="light" (click)="routeMe(child)"> 
+      <button *ngFor="let child of childPages" ion-item  color="light" (click)="routeMe(child)" class="account-list-button"> 
         <ion-icon [name]="child.icon" item-start></ion-icon>
         {{child.title}}
     </button> 
@@ -66,7 +66,7 @@
      -->
 
  
-  <button ion-item color="light" detail="true" (click) = "logout()">
+  <button ion-item color="light" detail="true" (click) = "logout()"  class="account-list-button">
       <ion-icon name="log-out" item-start></ion-icon>
       Logout
   </button> 

@@ -27,10 +27,12 @@ page-account ion-icon{
     color: #31B2F7 !important;
 }
 
-button{
-    margin: 10px !important ;
-    // margin-right: 10px !important ;
-    // margin-bottom: 10px !important;
+.account-list-button{
+    border-radius: 5px !important; 
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width:  98% !important;
+    margin-bottom: 10px !important;
      height: 9vh;
    
 }

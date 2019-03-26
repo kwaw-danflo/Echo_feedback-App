@@ -11,8 +11,8 @@
   <ion-grid>
     <ion-row class>
       <ion-col col-4> <button ion-button class="headBtn" clear> <img src="../../assets/imgs/map-btn.png"></button></ion-col>
-      <ion-col col-4> <button ion-button class="headBtn" clear> <img src="../../assets/imgs/AtoZ-btn.png"></button></ion-col>
-      <ion-col col-4> <button ion-button class="headBtn" clear> <img src="../../assets/imgs/c&s-btn.png"></button></ion-col>
+      <ion-col col-4> <button ion-button class="headBtn" clear> <img src="../../assets/imgs/AtoZ-btn.png" (click)= "goAtoZ()"></button></ion-col>
+      <ion-col col-4> <button ion-button class="headBtn" clear> <img src="../../assets/imgs/c&s-btn.png" (click)= "goClubs()"></button></ion-col>
 
     </ion-row>
     <!-- <div *ngFor="let child of childPages">
@@ -38,7 +38,7 @@
 </div> -->
 
     <ion-list no-lines>
-      <button *ngFor="let child of childPages" ion-item color="light" detail-none class="listBtn">
+      <button *ngFor="let child of childPages" ion-item color="light" detail-none class="list-button">
         <ion-icon [name]="child.icon" item-end></ion-icon>
         {{child.title}}
       </button>

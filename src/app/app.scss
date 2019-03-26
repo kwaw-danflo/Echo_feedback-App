@@ -15,6 +15,20 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+@font-face {
+    font-family: 'helvetica';
+    font-style:normal;
+    font-weight: 100;
+    src: url('../assets/fonts/Helvetica-Light-05.ttf');
+  }
+
+  @font-face {
+    font-family: 'helvetica';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../assets/fonts/Helvetica-Bold-02.ttf');
+  }
+  
 .tabbar{
     background-color: #0B1C33!important;
 }

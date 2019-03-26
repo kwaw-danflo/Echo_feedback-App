@@ -5,7 +5,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content >
   
     <!-- <div *ngFor="let post of postList">
         <ion-card (click)="viewPost(post.id)" class="my-card"> 
@@ -37,7 +37,7 @@
     <ion-grid>
       <ion-row (click)="viewPost(post.id)">
         <ion-col col-9> 
-          <p style="font-weight:bolder !important">
+          <p style="font-weight:bold !important">
           {{post.title}} 
           </p>
         <ion-card-content class="wrap-text">
@@ -57,12 +57,13 @@
         <ion-col col-3 style="text-align:center" > 
           
             <!-- <ion-icon (click)="toggleHeart(i)" [name]="heartIcon" ></ion-icon> -->
-            <ion-icon  name="heart-outline" ></ion-icon>
-          
+            <ion-icon  name="heart-outline" (click)="like($event)"></ion-icon>
+            <!-- [ngClass]="{'like' : clicked }" -->
+     
               <ion-icon name="share"></ion-icon>
            
             
-                <ion-icon name="ios-bookmark-outline"></ion-icon>
+                <ion-icon name="ios-bookmark-outline" (click)=bookmark($event,post);></ion-icon>
               
         </ion-col> 
       </ion-row>

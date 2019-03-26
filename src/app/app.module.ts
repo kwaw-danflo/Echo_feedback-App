@@ -20,6 +20,10 @@ import { TradePage} from '../pages/trade/trade';
 import { BookmarksPage} from '../pages/bookmarks/bookmarks';
 import { PollsPage} from '../pages/polls/polls';
 import{usefulContactsPage} from '../pages/usefulContacts/usefulContacts'
+import{ClubsPage} from '../pages/clubs/clubs';
+import{AtoZPage} from '../pages/AtoZ/AtoZ'
+import{clubsDetailPage} from '../pages/c&sDetail/c&sDetail';
+import{LocationsPage} from '../pages/locations/locations'
 import { TabsPage } from '../pages/tabs/tabs';
 
 
@@ -31,6 +35,7 @@ import { AuthenticationProvider } from '../providers/authentication/authenticati
 import { AccountProvider } from '../providers/account/account';
 import { IssueReportProvider } from '../providers/issue-report/issue-report';
 import { contentFormat } from '../pipes/content-format/content-format';
+import { CampusProvider } from '../providers/campus/campus';
 
 
 @NgModule({
@@ -53,6 +58,10 @@ import { contentFormat } from '../pipes/content-format/content-format';
      PollsPage,
      usefulContactsPage,
      ReportPage,
+     ClubsPage,
+     AtoZPage,
+     LocationsPage,
+     clubsDetailPage,
      contentFormat
      
   ],
@@ -60,7 +69,7 @@ import { contentFormat } from '../pipes/content-format/content-format';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
-      
+      backButtonIcon: 'ios-arrow-back'
     }
       , {
       links: [
@@ -79,7 +88,7 @@ import { contentFormat } from '../pipes/content-format/content-format';
        { component: PollsPage, name: 'Polls', segment: 'polls' },   
        { component: PostPage, name: 'Post', segment: 'post/:postId' },
        { component: usefulContactsPage, name: 'usefulContacts', segment: 'usefulContacts' },
-       { component: PostPage, name: 'infoDetail', segment: 'infoDetail/:infoId' }
+       { component: infoDetailPage, name: 'infoDetail', segment: 'infoDetail/:infoId' }
        
      ]
    }
@@ -105,6 +114,10 @@ import { contentFormat } from '../pipes/content-format/content-format';
     BookmarksPage,
     PollsPage,
     ReportPage,
+    ClubsPage,
+    AtoZPage,
+    LocationsPage,
+    clubsDetailPage,
     usefulContactsPage
   ],
   providers: [
@@ -115,7 +128,8 @@ import { contentFormat } from '../pipes/content-format/content-format';
     InfoProvider,
     AuthenticationProvider,
     AccountProvider,
-    IssueReportProvider
+    IssueReportProvider,
+    CampusProvider
     
   ]
 })
