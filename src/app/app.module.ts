@@ -69,7 +69,8 @@ import { CampusProvider } from '../providers/campus/campus';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
-      backButtonIcon: 'ios-arrow-back'
+      backButtonIcon: 'ios-arrow-back',
+      backButtonText: '',
     }
       , {
       links: [

@@ -29,13 +29,27 @@
     src: url('../assets/fonts/Helvetica-Bold-02.ttf');
   }
   
-.tabbar{
+  .tabbar{
     background-color: #0B1C33!important;
 }
 
- .tab-button, .tab-button-icon{
+.tab-button{
+  ion-icon{
+    -webkit-text-fill-color: #6F9EBE;
+  }
+  span.tab-button-text{
+    color:#6F9EBE ;
+    font-size: 0.9rem;
+  }
+}
 
-    color: #6F9EBE !important;
+.tab-button[aria-selected=true]{
+  ion-icon{
+    -webkit-text-fill-color: white;
+  }
+  span.tab-button-text{
+    color: white ;
+  }
 }
 
 
