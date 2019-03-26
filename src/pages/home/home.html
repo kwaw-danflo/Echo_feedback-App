@@ -33,12 +33,13 @@
         <ion-col col-3 style="text-align:center" > 
           
             <!-- <ion-icon (click)="toggleHeart(i)" [name]="heartIcon" ></ion-icon> -->
-            <ion-icon  name="heart-outline" ></ion-icon>
-          
+            <ion-icon  name="heart-outline" (click)="like($event)"></ion-icon>
+            <!-- [ngClass]="{'like' : clicked }" -->
+     
               <ion-icon name="share"></ion-icon>
            
             
-                <ion-icon name="ios-bookmark-outline"></ion-icon>
+                <ion-icon name="ios-bookmark-outline" (click)=bookmark($event,post);></ion-icon>
               
         </ion-col> 
       </ion-row>

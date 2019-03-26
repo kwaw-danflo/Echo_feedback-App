@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+import{ClubsPage} from '../clubs/clubs'
+import{AtoZPage} from '../AtoZ/AtoZ'
 @Component({
   selector: 'page-campus',
   templateUrl: 'campus.html'
@@ -69,4 +70,12 @@ export class CampusPage {
     
   }
 ]
+
+goClubs(){
+  this.navCtrl.push(ClubsPage)
+ }
+ goAtoZ(){
+  this.navCtrl.push(AtoZPage)
+ }
+
 }

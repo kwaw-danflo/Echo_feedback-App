@@ -23,5 +23,8 @@ export class TabsPage {
     if(!localStorage.getItem('token')) {
       navCtrl.setRoot(LoginPage);
   }
+
 }
+
+
 }

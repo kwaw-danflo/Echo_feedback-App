@@ -3,7 +3,8 @@ page-info ion-content {
 }
 
 .info-card-header{
-    font-weight: 900;
+    font-weight: bold !important;
+    font-size: 1.2rem !important;
     text-transform: capitalize; 
 }
 
@@ -17,4 +18,9 @@ page-info ion-content {
     box-shadow: none !important;
   }
 
-  
+
+  page-info{
+  ion-note{
+    font-size: 8px !important;
+  }
+}

@@ -25,12 +25,15 @@ export class LoginPage {
     private loadingControl: LoadingController
     
     ) {}
+
+
     ionViewWillEnter(){
       if ( localStorage.getItem('token')!= null )
       {
         this.navCtrl.setRoot(TabsPage)
       }
     }
+    
     login(){
       this.showLoading();
       this.auth.login(this.user).then (result => {

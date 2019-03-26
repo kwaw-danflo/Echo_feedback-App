@@ -28,16 +28,37 @@ export class HomePage {
      
   }
 
+
+  // clicked:Boolean=false;
  
-//   clicked:Boolean=false;
-//   heartIcon:string="heart-outline";
-//   toggleHeart(e){
-// console.log(e)
-//    this.clicked=!this.clicked;
 
-// this.heartIcon= this.clicked ? 'heart' : 'heart-outline'
-//   }
+  like(e){
 
+  //  this.clicked=!this.clicked;
+
+//    if(this.clicked){
+    
+//       e.target.setAttribute("name","heart")
+//     e.target.classList.remove("ion-md-heart-outline")
+//     e.target.classList.add("ion-md-heart")
+//    }
+//  else{
+
+//   e.target.setAttribute("name","heart-outline")
+//   e.target.classList.remove("ion-md-heart")
+//   e.target.classList.add("ion-md-heart-outline")
+//  }
+e.target.classList.toggle("ion-md-heart-outline")
+e.target.classList.toggle("ion-md-heart")
+
+  }
+
+  bookmark(e,post){
+    // this.bookmarks.push(post);
+    // localStorage.setItem('bookmarks',JSON.stringify(this.bookmarks))
+e.target.classList.toggle("ion-ios-bookmark-outline")
+e.target.classList.toggle("ion-ios-bookmark")
+  }
   
 }
 
