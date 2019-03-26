@@ -9,25 +9,26 @@ import{infoDetailPage} from '../infoDetail/infoDetail'
 })
 export class InfoPage {
 
-  infoList;
+  infoList: any;
 
   constructor(public navCtrl: NavController, public infoProvider:InfoProvider ) {
-    this.getinfo();
+    
+  }
+
+  ionViewDidLoad(){
+    this.infoProvider.getInfos().then(data =>{
+      this.infoList = data;
+    });
   }
 
   
-  viewInfo(id) {
-    this.navCtrl.push(infoDetailPage,{id:id});
+  viewInfo(info) {
+    this.navCtrl.push(infoDetailPage,{info:info});
      
   }
 
-  getinfo(){
-    this.infoProvider.getinfos().then(data =>{
-      this.infoList = data;
-
-      
-    })
-  }
+  
+  
 
   
 

@@ -6,46 +6,22 @@
 </ion-header>
 
 <ion-content>
-  
-    <!-- <div *ngFor="let post of postList">
-        <ion-card (click)="viewPost(post.id)" class="my-card"> 
-            <ion-grid>
-              <ion-row>
-                  <ion-col col-9>
-                      <ion-card-header >
-                          {{post.title}}
-                        </ion-card-header>
-                        <ion-card-content class="wrap-text">
-                          {{post.content}}
-                        </ion-card-content>
-                        <ion-note>Posted on: {{post.date | date}}</ion-note>
-                  </ion-col>
-                  
-                  <ion-col col-3 >
-                      <img  src = {{post.imageLink}} />
-                      
-                  </ion-col>
-              </ion-row>
-              
-            </ion-grid>
-          </ion-card>
-        </div>
-     -->
+
 
 <div *ngFor="let post of postList; let i= index">
   <ion-card class="mynew-card" >
     <ion-grid>
-      <ion-row (click)="viewPost(post.id)">
+      <ion-row (click)="viewPost(post)">
         <ion-col col-9> 
           <p style="font-weight:bolder !important">
-          {{post.title}} 
+          {{post.title.rendered}} 
           </p>
         <ion-card-content class="wrap-text">
-            {{post.content}}
+            <p [innerHTML]="post.excerpt.rendered"></p>
           </ion-card-content>
       </ion-col> 
         <ion-col col-3 >
-            <img  src = {{post.imageLink}}  class="img-container"/>
+            <img  src = {{post.featured_image_url}}  class="img-container"/>
         </ion-col> 
       </ion-row>
       <ion-row>

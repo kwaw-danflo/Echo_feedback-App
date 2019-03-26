@@ -7,13 +7,13 @@
 
 <ion-content >
     <ion-card-header text-wrap>
-        <h3>{{info.title}}</h3>
+        <h3>{{info.title.rendered}}</h3>
         </ion-card-header>
   
-      <img src={{info.imageLink}}>
+      <img src={{info.featured_image_url>
   
       <ion-card-content text-justify >
-         {{info.content}}
+         {{info.content.rendered}}
         </ion-card-content>
   
 </ion-content>

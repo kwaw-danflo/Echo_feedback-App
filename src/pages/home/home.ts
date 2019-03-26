@@ -10,25 +10,25 @@ import { PostProvider } from '../../providers/post/post';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  postList;
+  postList: any;
 
   constructor(public navCtrl: NavController, public postProvider:PostProvider ) {
-    this.getPosts();
   }
 
+  ionViewDidLoad(){
+      this.postProvider.getPosts().then(data =>{
+        
+        this.postList = data;
   
-  viewPost(id) {
-    this.navCtrl.push(PostPage,{id:id});
+        
+      });
+  }
+  viewPost(post) {
+    this.navCtrl.push(PostPage,{post:post});
      
   }
 
-  getPosts(){
-    this.postProvider.getPosts().then(data =>{
-      this.postList = data;
-
-      
-    })
-  }
+ 
 //   clicked:Boolean=false;
 //   heartIcon:string="heart-outline";
 //   toggleHeart(e){

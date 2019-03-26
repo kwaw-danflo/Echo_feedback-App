@@ -7,13 +7,14 @@
 
 <ion-content >
     <ion-card-header text-wrap>
-        <h3>{{post.title}}</h3>
+        <h3>{{post.title.rendered}}</h3>
         </ion-card-header>
   
-      <img src={{post.imageLink}}>
+        <img src={{post.featured_image_url}}>
   
       <ion-card-content text-justify [ngStyle]="{ 'white-space': 'pre-line' }" >
-         {{post.content}}
+         <p [innerHTML]="post.content.rendered"></p>
         </ion-card-content>
   
 </ion-content>
+
