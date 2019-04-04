@@ -5,8 +5,27 @@
 </ion-header>
 
 <ion-content >
+    <ion-card id="channel-card">
+        <ion-slides  slidesPerView="4" spaceBetween="6">
+  
+            <ion-slide >
+                <button mode="md" ion-button outline  > All info</button>
+            </ion-slide>
+            <ion-slide >
+                <button mode="md" ion-button outline  > All info</button>
+            </ion-slide>
+            <ion-slide >
+                <button mode="md" ion-button outline  > All info</button>
+            </ion-slide>
+            <ion-slide >
+                <button mode="md" ion-button outline  > All info</button>
+            </ion-slide>
+          </ion-slides  >
+  
+    </ion-card>
+    
   <div *ngFor="let info of infoList">
-  <ion-card (click)="viewInfo(info.id)" class="my-card">
+  <ion-card (click)="viewInfo(info)" class="my-card">
     <ion-card-content>
       <ion-grid >
         <ion-row>

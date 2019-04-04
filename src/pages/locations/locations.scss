@@ -1,15 +1,21 @@
 page-locations ion-content{
     background: #fff !important;
 
+    span{
+        font-weight: bold;
+    }
 }
-page-locations {
-    background: #fff !important;
+page-locations ion-header{
+    .toolbar-background{
+      
+        background: transparent;
+    }
+.back-button{
+    color: #6F9EBE;
+}
 
 }
 
-span{
-    font-weight: bold;
-}
 
 
 

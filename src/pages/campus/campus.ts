@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import{MapPage} from '../map/map'
 import{ClubsPage} from '../clubs/clubs'
 import{AtoZPage} from '../AtoZ/AtoZ'
 @Component({
@@ -76,6 +77,9 @@ goClubs(){
  }
  goAtoZ(){
   this.navCtrl.push(AtoZPage)
+ }
+ goMap(){
+  this.navCtrl.push(MapPage)
  }
 
 }

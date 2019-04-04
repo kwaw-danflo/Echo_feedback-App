@@ -11,8 +11,8 @@ import { PostProvider } from '../../providers/post/post';
 })
 export class HomePage {
   postList: any;
-
   constructor(public navCtrl: NavController, public postProvider:PostProvider ) {
+
   }
 
   ionViewDidLoad(){
@@ -20,8 +20,12 @@ export class HomePage {
         
         this.postList = data;
   
-        
+        console.log(this.postList)
       });
+
+      
+
+      console.log(this.postList)
   }
   viewPost(post) {
     this.navCtrl.push(PostPage,{post:post});

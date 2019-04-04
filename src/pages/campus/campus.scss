@@ -3,13 +3,14 @@ page-campus ion-content {
     background-size: cover;
     background-position: center;
 
+    .headBtn{
+        height: 110px !important;
+        padding: 0px;
+        
+    }
 }
 
-.headBtn{
-    height: 110px !important;
-    padding: 0px;
-    
-}
+
 
 .listBtn{
     border-radius: 5px;

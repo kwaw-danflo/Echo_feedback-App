@@ -15,6 +15,7 @@ info:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
       this.info = this.navParams.get("info");
+      console.log(this.info)
     
   }
 

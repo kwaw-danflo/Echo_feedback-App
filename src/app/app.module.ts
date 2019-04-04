@@ -24,6 +24,7 @@ import{ClubsPage} from '../pages/clubs/clubs';
 import{AtoZPage} from '../pages/AtoZ/AtoZ'
 import{clubsDetailPage} from '../pages/c&sDetail/c&sDetail';
 import{LocationsPage} from '../pages/locations/locations'
+import{MapPage} from '../pages/map/map'
 import { TabsPage } from '../pages/tabs/tabs';
 
 
@@ -62,6 +63,7 @@ import { CampusProvider } from '../providers/campus/campus';
      AtoZPage,
      LocationsPage,
      clubsDetailPage,
+     MapPage,
      contentFormat
      
   ],
@@ -119,6 +121,7 @@ import { CampusProvider } from '../providers/campus/campus';
     AtoZPage,
     LocationsPage,
     clubsDetailPage,
+    MapPage,
     usefulContactsPage
   ],
   providers: [

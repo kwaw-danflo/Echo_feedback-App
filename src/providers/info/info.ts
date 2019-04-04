@@ -17,10 +17,10 @@ export class InfoProvider {
   access_token: string = '';
 
   constructor(public http: HttpClient) {
-    //  this.access_token = '?access_token=' + localStorage.getItem('token');
-    // this.apiBaseUrl = 'https://uniapp-api.herokuapp.com/api/';
+     this.access_token = '?access_token=' + localStorage.getItem('token');
+    this.apiBaseUrl = 'https://uniapp-api.herokuapp.com/api/';
       // this.apiBaseUrl = 'http://localhost:3000/api/'
-      this.apiBaseUrl = 'https://augustinevirgo.ml/uniapp/wp-json/wp/v2/'
+      // this.apiBaseUrl = 'https://augustinevirgo.ml/uniapp/wp-json/wp/v2/'
   }
   getInfo(id: number){
 
@@ -40,7 +40,7 @@ export class InfoProvider {
 
     return new Promise(resolve => {
     
-      this.http.get(this.apiBaseUrl + 'posts').subscribe(data => {
+      this.http.get(this.apiBaseUrl + 'posts' + '/' + this.access_token ).subscribe(data => {
         resolve(data);
     
       },

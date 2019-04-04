@@ -1,6 +1,25 @@
 page-home ion-content{
     background-color: #EEE !important;
+ion-slide{
+ 
+  ion-card{
+    border-radius: none;
+    width:100% !important;
 
+    .button-md{
+      margin-top: 0px !important;
+      margin-bottom: 0px !important; 
+      border-radius: 0px !important;
+      
+      span{
+        font-weight: normal;
+        text-transform: none;
+      }
+    }
+  }
+
+
+}
 }
 
 .mynew-card{
