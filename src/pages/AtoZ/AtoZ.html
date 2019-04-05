@@ -11,50 +11,20 @@
    
     
 
-<ion-list no-lines >
-      <button ion-item  color="light" (click)="routeMe()" class=" list-button">
+<ion-list no-lines *ngFor = "let location of locationList" >
+      <button ion-item color="light" (click)="routeMe(location)" class=" list-button">
           <ion-avatar item-start style="height:15px !important; width:15px ! important">
-              <img src="../../assets/imgs/africanBank.png">
+              <img src={{location.imageLink}}>
             </ion-avatar>
-        African Bank Ghana Limited
+        {{location.name}}
     </button> 
-    <!-- <button ion-item  color="light" (click)= "goBookmark()"> 
-        <ion-icon name="bookmark" item-start></ion-icon>
-        Bookmarks
-    </button>  -->
-
-    <!-- <button ion-item   color="light" (click)= "goInfo()">
-        <ion-icon name="notifications" item-start></ion-icon>
-        Information Channels
-    </button> 
-
-    <button ion-item  color="light" (click) = "goIssue()">
-        <ion-icon name="information-circle" item-start></ion-icon>
-        Report an Issue 
-    </button> 
-
-    <button ion-item   color="light" (click)= "goPolls()">
-        <ion-icon name="stats" item-start></ion-icon>
-       Polls & Surveys 
-    </button> 
-
-    <button ion-item   color="light" (click)= "goTrade()">
-        <ion-icon name="cash" item-start></ion-icon>
-       Uni Trade Account 
-    </button> 
-
-    <button ion-item   color="light" (click)= "goLinks()">
-        <ion-icon name="laptop" item-start></ion-icon>
-        Useful Links 
-    </button> 
-
-    <button ion-item   color="light" detail="true" (click)= "goContacts()">
-        <ion-icon name="call" item-start></ion-icon>
-        Useful Contacts
-    </button> 
-     -->
+</ion-list>
 
 
-
-  </ion-list>
-</ion-content>
+    <!-- <ion-list no-lines >
+            <button ion-item  color="light" (click)="routeMe()" class=" list-button">
+                <ion-avatar item-start style="height:15px !important; width:15px ! important">
+                    <img src="../../assets/imgs/africanBank.png">
+                  </ion-avatar>
+              African Bank Ghana Limited
+          </button>  -->

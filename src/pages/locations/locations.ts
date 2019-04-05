@@ -12,11 +12,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LocationsPage {
 
+  location: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,) {
-
-    
-    
+    this.location = this.navParams.get("location");
   }
 
  

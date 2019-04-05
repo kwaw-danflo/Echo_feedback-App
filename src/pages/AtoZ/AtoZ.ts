@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import {App, NavController,IonicPage,LoadingController, ToastController} from 'ionic-angular';
+import {App, NavController,IonicPage,LoadingController, ToastController, NavParams} from 'ionic-angular';
 import { AccountProvider } from '../../providers/account/account';
 import{LocationsPage} from '../../pages/locations/locations'
 
 
 import { LoginPage } from '../login/login';
+import { CampusProvider } from '../../providers/campus/campus';
 
 @IonicPage()
 @Component({
@@ -12,17 +13,26 @@ import { LoginPage } from '../login/login';
   templateUrl: 'AtoZ.html'
 })
 export class AtoZPage {
-  userData: any = {};
-  loading: any;
-  userid;
- 
   
-  constructor(public app: App,public navCtrl: NavController) {
+  locationList: any;
+ 
+ category: string = '';
+  constructor(public app: App,public navCtrl: NavController, public navParams: NavParams, public campusProvider: CampusProvider) {
+   this.category = this.navParams.get("title");
+   this.filterLocation();
+   
+  }
+  
+  filterLocation(){
+    this.campusProvider.filterLocation(this.category).then(data => {
+      this.locationList = data;
+      console.log(data);
+    });
    
   }
 
- routeMe(){
-   this.navCtrl.push(LocationsPage);
+ routeMe(location){
+   this.navCtrl.push(LocationsPage,{location:location});
  }
 
 

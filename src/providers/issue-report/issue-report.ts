@@ -12,7 +12,8 @@ import { ToastController } from 'ionic-angular';
 export class IssueReportProvider {
   apiBaseUrl: string = '';
   constructor(public http: HttpClient, public toastControl: ToastController) {
-    this.apiBaseUrl = 'https://uniapp-api.herokuapp.com/api/Issues';
+    //this.apiBaseUrl = 'https://uniapp-api.herokuapp.com/api/Issues';
+    this.apiBaseUrl = 'http://localhost:3000/api/Issues';
    
   }
 

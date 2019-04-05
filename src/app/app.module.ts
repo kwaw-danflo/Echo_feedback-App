@@ -39,6 +39,7 @@ import { contentFormat } from '../pipes/content-format/content-format';
 import { CampusProvider } from '../providers/campus/campus';
 
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -133,7 +134,7 @@ import { CampusProvider } from '../providers/campus/campus';
     AuthenticationProvider,
     AccountProvider,
     IssueReportProvider,
-    CampusProvider
+    CampusProvider,
     
   ]
 })

@@ -6,7 +6,7 @@
 </ion-header>
 
 <ion-content >
-    <ion-card-header text-wrap>
+    <!-- <ion-card-header text-wrap>
         <h3>{{info.title}}</h3>
         </ion-card-header>
   
@@ -15,5 +15,22 @@
       <ion-card-content text-justify >
          {{info.content}}
         </ion-card-content>
-  
+   -->
+   <!-- [ngClass]="alert" -->
+
+   <ion-card padding mode="md"  [ngClass]="{'alert': info.channel ==='Alert'}"  >
+     <ion-grid >
+       <ion-row>
+         <ion-col><img src={{info.imageLink}} ></ion-col> 
+         <ion-col>
+            <ion-row><h3>{{info.title}}</h3></ion-row> 
+            <ion-row>
+                <ion-col col-6><ion-note style="float:left!important">{{info.channel}}</ion-note></ion-col>
+                <ion-col col-6><ion-note style="float:right!important">{{info.date | date : "EEEE"}}</ion-note></ion-col>
+            </ion-row> 
+         </ion-col> 
+      </ion-row>  
+       <ion-row><p>{{info.content}}</p></ion-row> 
+     </ion-grid>
+   </ion-card>
 </ion-content>

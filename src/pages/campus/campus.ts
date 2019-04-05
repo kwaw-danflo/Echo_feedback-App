@@ -3,20 +3,25 @@ import { NavController } from 'ionic-angular';
 import{MapPage} from '../map/map'
 import{ClubsPage} from '../clubs/clubs'
 import{AtoZPage} from '../AtoZ/AtoZ'
+
+import { CampusProvider } from '../../providers/campus/campus';
+import { getPluralCategory } from '@angular/common/src/i18n/localization';
 @Component({
   selector: 'page-campus',
   templateUrl: 'campus.html'
 })
 export class CampusPage {
-
-  constructor(public navCtrl: NavController) {
+  
+  constructor(public navCtrl: NavController, private campusProvider: CampusProvider) {
 
   }
   childPages=[{
     'id':1,
     'icon':'cash',
-    'title':'Banks & ATMs',
-    'class' :''
+    'title':'Banks and ATMs',
+    'class' :'',
+    
+  
   },
   {
     'id':2,
@@ -70,7 +75,16 @@ export class CampusPage {
     'class':''
     
   }
+
+  
 ]
+
+getCategory(title) {
+  this.navCtrl.push(AtoZPage,{title: title});
+}
+
+
+
 
 goClubs(){
   this.navCtrl.push(ClubsPage)

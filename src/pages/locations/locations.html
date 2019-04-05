@@ -12,17 +12,17 @@
 
         <ion-grid no-padding>
             <ion-row style=" margin:10px">
-                <ion-col col-10>   <p class="location-header">Ecobank Ghana Limited</p> </ion-col>
-                <ion-col col-2 ><button ion-button class="locate-btn" clear > <img src="../../assets/imgs/locate-btn.png"></button></ion-col>
+                <ion-col col-10>   <p class="location-header">{{location.name}}</p> </ion-col>
+                <ion-col col-2 ><button ion-button class="locate-btn" clear > <img src="../../assets/imgs/find-btn.png"></button></ion-col>
             </ion-row>
             <ion-row>
-                <img src="../../assets/imgs/ecobank.jpg">
+                <img src={{location.imageLink}}>
             </ion-row>
 
            
 
             <div class="content-row">
-               <ion-row class="align">
+               <!-- <ion-row class="align">
 
                  <ion-col col-4 class="header-col" >
                     <p>Working Hours: </p>
@@ -49,18 +49,18 @@
                   </p>
                 </ion-col>
                   
-               </ion-row>
+               </ion-row> -->
 
               <ion-row class="align">
 
-                <ion-col col-4 class="header-col" >
+                <!-- <ion-col col-4 class="header-col" >
                   <p>Services: </p> 
-                </ion-col>
+                </ion-col> -->
 
-                <ion-col col-8>
-                  <p>
-                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit consequatur saepe iure quod dolor, incidunt tempore repudiandae labore laborum quibusdam. Praesentium vel repellendus minima nemo ab error quam, dolorum quas!
-                  </p>
+                <ion-col>
+                  <p [innerHTML] = "location.description"></p>
+                   
+                
                 </ion-col>
                   
                </ion-row>

@@ -1,10 +1,25 @@
 page-infoDetail ion-content{
-    background: #fff !important;
+    background: #EEE !important;
+.card-md{
+    border-radius: 6px;
+    margin: 7px auto ;
+    box-shadow: 2px 3px #00000024;
+    h3{
+        font-weight: bolder !important;
+    }
 
+  }
+
+  ion-card img {
+
+    width: auto;
+    height: 100px;
+  }
+  .alert{
+    background:linear-gradient(#FD2D75, #FF5455);
+    p, h3,.note-md {
+        color: #fff !important;
+    }
+   
+  }
 }
-
-
-
-
-
-

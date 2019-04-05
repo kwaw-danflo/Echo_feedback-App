@@ -11,6 +11,8 @@ import { PostProvider } from '../../providers/post/post';
 })
 export class HomePage {
   postList: any;
+  bookmarksList: any = [];
+
   constructor(public navCtrl: NavController, public postProvider:PostProvider ) {
 
   }
@@ -19,8 +21,9 @@ export class HomePage {
       this.postProvider.getPosts().then(data =>{
         
         this.postList = data;
-  
-        console.log(this.postList)
+        console.log(data)
+       
+        
       });
 
       
@@ -57,7 +60,7 @@ e.target.classList.toggle("ion-md-heart")
 
   }
 
-  bookmark(e,post){
+  bookmark(e,{post:post}){
     // this.bookmarks.push(post);
     // localStorage.setItem('bookmarks',JSON.stringify(this.bookmarks))
 e.target.classList.toggle("ion-ios-bookmark-outline")
