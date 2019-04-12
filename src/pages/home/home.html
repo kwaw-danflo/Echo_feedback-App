@@ -76,14 +76,14 @@
   
 
 <div *ngFor="let post of postList; let i= index">
-  <ion-card class="mynew-card" >
+  <ion-card class="post-card" >
     <ion-grid>
       <ion-row (click)="viewPost(post)">
         <ion-col col-9> 
           <p style="font-weight:bolder !important">
           {{post.title}} 
           </p>
-        <ion-card-content class="wrap-text">
+        <ion-card-content class="wrap-text" no-padding>
             <p [innerHTML]="post.content"></p>
           </ion-card-content>
       </ion-col> 

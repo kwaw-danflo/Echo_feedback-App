@@ -8,27 +8,42 @@
 <ion-content>
   
     <div *ngFor="let post of postList">
-        <ion-card (click)="viewPost(post.id)" class="card"> 
-            <ion-grid>
-              <ion-row>
-                  <ion-col col-9>
-                      <ion-card-header text-wrap>
-                          {{post.title}}
-                        </ion-card-header>
-                        <ion-card-content class="wrap-text">
-                          {{post.content}}
-                        </ion-card-content>
-                        <ion-note>Posted on: {{post.date | date}}</ion-note>
-                  </ion-col>
-                  
-                  <ion-col col-3 >
-                      <img  src = {{post.imageLink}} />
-                      
-                  </ion-col>
-              </ion-row>
+      <ion-card class="post-card" >
+        <ion-grid>
+          <ion-row (click)="viewPost(post)">
+            <ion-col col-9> 
+              <p style="font-weight:bolder !important">
+              {{post.title}} 
+              </p>
+            <ion-card-content class="wrap-text">
+                <p [innerHTML]="post.content"></p>
+              </ion-card-content>
+          </ion-col> 
+            <ion-col col-3 >
+                <img  src = {{post.imageLink}}  class="img-container"/>
+            </ion-col> 
+          </ion-row>
+          <ion-row>
+            <ion-col col-9>
+                <ion-note style="float: left !important" >TeamUni</ion-note>
+                <ion-note style="float:right !important" >{{post.date | date}}</ion-note>
+               
+            </ion-col> 
+            <ion-col col-3 style="text-align:center" > 
               
-            </ion-grid>
-          </ion-card>
+                <!-- <ion-icon (click)="toggleHeart(i)" [name]="heartIcon" ></ion-icon> -->
+                <ion-icon ios="md-heart-outline" name="heart-outline" (click)="like($event)"></ion-icon>
+                <!-- [ngClass]="{'like' : clicked }" -->
+         
+                  <ion-icon name="share"></ion-icon>
+               
+                
+                    <ion-icon name="ios-bookmark" (click)=bookmark($event,post);></ion-icon>
+                  
+            </ion-col> 
+          </ion-row>
+        </ion-grid>
+      </ion-card>
         </div>
     
 

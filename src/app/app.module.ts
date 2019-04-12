@@ -25,6 +25,7 @@ import{AtoZPage} from '../pages/AtoZ/AtoZ'
 import{clubsDetailPage} from '../pages/c&sDetail/c&sDetail';
 import{LocationsPage} from '../pages/locations/locations'
 import{MapPage} from '../pages/map/map'
+import{WelcomePage} from '../pages/welcome/welcome'
 import { TabsPage } from '../pages/tabs/tabs';
 
 
@@ -65,6 +66,7 @@ import { CampusProvider } from '../providers/campus/campus';
      LocationsPage,
      clubsDetailPage,
      MapPage,
+     WelcomePage,
      contentFormat
      
   ],
@@ -92,7 +94,8 @@ import { CampusProvider } from '../providers/campus/campus';
        { component: PollsPage, name: 'Polls', segment: 'polls' },   
        { component: PostPage, name: 'Post', segment: 'post/:postId' },
        { component: usefulContactsPage, name: 'usefulContacts', segment: 'usefulContacts' },
-       { component: infoDetailPage, name: 'infoDetail', segment: 'infoDetail/:infoId' }
+       { component: infoDetailPage, name: 'infoDetail', segment: 'infoDetail/:infoId' },
+       { component: WelcomePage, name: 'welcome', segment: 'welcome' }
        
      ]
    }
@@ -123,6 +126,7 @@ import { CampusProvider } from '../providers/campus/campus';
     LocationsPage,
     clubsDetailPage,
     MapPage,
+    WelcomePage,
     usefulContactsPage
   ],
   providers: [
