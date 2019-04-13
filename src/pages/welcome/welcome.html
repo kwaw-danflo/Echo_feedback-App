@@ -2,20 +2,21 @@
 
 <ion-content >
     <!-- <img src="../../assets/imgs/welcome-illustration.png" > -->
-    <ion-slides   >
+    <ion-slides  pager  >
         
-        <ion-slide style="background-image: url(../../assets/imgs/plain-blue-background.png) "   >
+        <ion-slide   id="slide1">
            <img src="../../assets/imgs/welcome-illustration.png" >
-
-           <h1 class="welcome-header">Welcome To UNI<span >.</span></h1>
-           <p>College life just got simpler for you and I. Before we get started, lets take a moment to show you around</p>
-           <button ion-button round color="navyBlue"> start</button>
+           <div class="text-div">  <h1 class="welcome-header">Welcome To UNI<span >.</span></h1>
+            <p>College life just got simpler for You and I. Before we get started, lets take a moment to show you around</p></div>
+          
+           <button ion-button round color="navyBlue" (click)="next()"> start</button>
            <p class="center skip-text">Already a user on Uni? <a (click)="goLogin()" >Login</a></p>
         </ion-slide>
       
-        <ion-slide style="background-image: url(../../assets/imgs/plain-blue-background.png);"  >
-          <h1 class="welcome-header"> Getting Started<span >.</span></h1>
-          <p> Uni App does a lot of things but still keeps it simple. you'll soon get used to our main navigation tabs.</p>
+        <ion-slide  id="slide2" >
+          <div id="navs">
+          <div  class="text-div"> <h1 class="welcome-header"> Getting Started<span >.</span></h1>
+            <p> Uni App does a lot of things but still keeps it simple. you'll soon get used to our main navigation tabs.</p></div>
           <ion-card class="welcome-card" no-padding>
             <ion-grid no-padding>
               <ion-row>
@@ -71,15 +72,18 @@
                       </ion-row>
                     </ion-grid>
                   </ion-card>
-
-                  <button class="footer-btn"ion-button color="navyBlue" full> Continue</button>
+                </div>
+                  <button class="footer-btn"ion-button color="navyBlue" full (click)="next()"> Continue</button>
         </ion-slide>
       
-        <ion-slide style=" background-image: url(../../assets/imgs/rocket-bg.png) ">
-          <h1 class="welcome-header"> Almost There<span >.</span></h1>
+        <ion-slide  id="slide3" padding>
+          <div  class="text-div">
+            <h1 class="welcome-header"> Almost There<span >.</span></h1>
           <p>Now let's sign you up so you can use Uni. you are required to sign up with a valid student email.Example yourname@st.ug.edu.gh </p>
-          <button ion-button round color="navyBlue"> sign up</button>
+          <button ion-button round color="navyBlue" (click)="goSignUp()"> sign up</button>
            <p class="center skip-text">Already a user on Uni? <a (click)="goLogin()" >Login</a></p>
+          </div>
+          
         </ion-slide>
         
 

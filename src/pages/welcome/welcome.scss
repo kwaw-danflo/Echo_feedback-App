@@ -28,10 +28,10 @@ ion-slides{
 }
 .welcome-header{
    font-weight: bold;
-
+   font-size: 36px !important;
     span{
         color: #df7878;
-        font-size: 30px;
+        
     }
 }
 
@@ -43,6 +43,8 @@ img{
 }
 
 .welcome-card{
+  
+    margin-top: 15px;
     h6{
         font-weight: bold;
     }
@@ -57,4 +59,47 @@ img{
     margin: 0px;
     height: 8%;
 }
+}
+
+#slide1{
+    background-image: url(../../assets/imgs/plain-blue-background.png);
+    padding: 0px 14px 14px 14px;
+    .text-div{
+        text-align: center;
+
+        p{
+            font-size:16px
+        }
+    }
+}
+
+#slide2{
+    background-image: url(../../assets/imgs/plain-blue-background.png);
+    
+
+    #navs{
+         padding: 30px 14px 14px 14px;
+    }
+    .text-div{
+        text-align: center;
+        margin-top:10px;
+        margin-bottom: 10px;
+
+        p{
+            font-size:13px
+        }
+    }
+}
+#slide3{
+    background-image: url(../../assets/imgs/rocket-bg.png);
+    padding: 10px 14px 14px 14px;
+    .text-div{
+        text-align: center;
+        margin-top:30vh;
+
+        p{
+            font-size:13px
+        }
+    }
+
 }

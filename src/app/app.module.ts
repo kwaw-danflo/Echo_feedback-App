@@ -26,6 +26,7 @@ import{clubsDetailPage} from '../pages/c&sDetail/c&sDetail';
 import{LocationsPage} from '../pages/locations/locations'
 import{MapPage} from '../pages/map/map'
 import{WelcomePage} from '../pages/welcome/welcome'
+import{NewsPage} from '../pages/news/news'
 import { TabsPage } from '../pages/tabs/tabs';
 
 
@@ -67,6 +68,7 @@ import { CampusProvider } from '../providers/campus/campus';
      clubsDetailPage,
      MapPage,
      WelcomePage,
+     NewsPage,
      contentFormat
      
   ],
@@ -127,6 +129,7 @@ import { CampusProvider } from '../providers/campus/campus';
     clubsDetailPage,
     MapPage,
     WelcomePage,
+    NewsPage,
     usefulContactsPage
   ],
   providers: [

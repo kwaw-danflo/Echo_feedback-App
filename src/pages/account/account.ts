@@ -30,6 +30,7 @@ export class AccountPage {
   getUserData(id) {
     this.accountProvider.getUserData(id).then(data => {
       this.userData = data;
+      localStorage.setItem('user', this.userData.firstName)
       console.log(data)
     });
   }

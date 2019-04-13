@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
-import { NavController,App, AlertController, LoadingController, Loading, Platform } from 'ionic-angular';
+import { Component, ViewChild} from '@angular/core';
+import { NavController,App, AlertController, LoadingController, Loading, Platform, NavControllerBase, Slides } from 'ionic-angular';
+import{LoginPage} from '../login/login';
 import{SignupPage} from '../signup/signup';
 import {TabsPage} from '../tabs/tabs';
+
 
 
 import { AuthenticationProvider } from '../../providers/authentication/authentication';
@@ -11,9 +13,13 @@ import { AuthenticationProvider } from '../../providers/authentication/authentic
   selector: 'page-welcome',
   templateUrl: 'welcome.html'
 })
+
+
+
 export class WelcomePage {
 
-    
+  @ViewChild(Slides) slides: Slides;  
+
   constructor(
     public navCtrl: NavController,
     private app: App, 
@@ -23,9 +29,17 @@ export class WelcomePage {
     
     ) {}
 
+goLogin(){
+  this.app.getRootNav().push(LoginPage)
+}
 
+next() {
+  this.slides.slideNext();
+}
 
-  
+goSignUp(){
+  this.navCtrl.push(SignupPage);
+}
 
 }
 

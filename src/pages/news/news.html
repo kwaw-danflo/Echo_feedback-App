@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-navbar>
+    <img src="../../assets/imgs/header.png" class="header-image">
+  
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+      <ion-slides  slidesPerView="3" spaceBetween="6">
+
+          <ion-slide >
+              <ion-card>
+                <ion-grid no-padding>
+                  <ion-row>
+                      <img src="../../assets/imgs/today.jpg">
+                  </ion-row>
+                  <ion-row >
+                      
+                      <button ion-button mode="md" block style=" background:linear-gradient(#31B2F7, #50E0DF) ">Today's Info</button>
+                      </ion-row>
+                </ion-grid>  
+                
+
+                </ion-card>
+          </ion-slide>
+        
+          <ion-slide >
+              <ion-card>
+                  <ion-grid no-padding>
+                    <ion-row>
+                        <img src="../../assets/imgs/featured.jpg">
+                    </ion-row>
+                    <ion-row >
+                      
+                        <button ion-button mode="md" block style=" background:linear-gradient(#FD2D75, #FF5455)">Top Featured</button>
+                        </ion-row>
+                  </ion-grid>  
+                  
+  
+                  </ion-card>
+          </ion-slide>
+        
+          <ion-slide >
+              <ion-card>
+                  <ion-grid no-padding>
+                    <ion-row>
+                        <img src="../../assets/imgs/event.jpg">
+                    </ion-row>
+                    <ion-row >
+                        <button ion-button mode="md" block style=" background:linear-gradient(#CDE41E, #97D827) ">Events</button>
+                        </ion-row>
+                  </ion-grid>  
+                  
+  
+                  </ion-card>
+          </ion-slide>
+        
+          <ion-slide >
+              <ion-card>
+                  <ion-grid no-padding>
+                    <ion-row>
+                        <img src="../../assets/imgs/eateris.jpg">
+                    </ion-row>
+                    <ion-row >
+                      
+                      <button ion-button block mode="md" style=" background:linear-gradient(#FFE206, #FFBC09) ">Eateries</button>
+                      </ion-row>
+                  </ion-grid>  
+                  
+  
+                  </ion-card>
+          </ion-slide>
+        </ion-slides>
+  </ion-card>
+  
+
+<div *ngFor="let post of postList; let i= index">
+  <ion-card class="post-card" >
+    <ion-grid>
+      <ion-row (click)="viewPost(post)">
+        <ion-col col-9> 
+          <p style="font-weight:bolder !important">
+          {{post.title}} 
+          </p>
+        <ion-card-content class="wrap-text" no-padding>
+            <p [innerHTML]="post.content"></p>
+          </ion-card-content>
+      </ion-col> 
+        <ion-col col-3 >
+            <img  src = {{post.imageLink}}  class="img-container"/>
+        </ion-col> 
+      </ion-row>
+      <ion-row>
+        <ion-col col-9>
+            <ion-note style="float: left !important" >TeamUni</ion-note>
+            <ion-note style="float:right !important" >{{post.date | date}}</ion-note>
+           
+        </ion-col> 
+        <ion-col col-3 style="text-align:center" > 
+          
+            <!-- <ion-icon (click)="toggleHeart(i)" [name]="heartIcon" ></ion-icon> -->
+            <ion-icon ios="md-heart-outline" name="heart-outline" (click)="like($event)"></ion-icon>
+            <!-- [ngClass]="{'like' : clicked }" -->
+     
+              <ion-icon name="share"></ion-icon>
+           
+            
+                <ion-icon name="ios-bookmark-outline" (click)=bookmark($event,post);></ion-icon>
+              
+        </ion-col> 
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</div>
+ 
+</ion-content>

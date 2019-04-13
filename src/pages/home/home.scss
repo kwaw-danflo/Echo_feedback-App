@@ -1,67 +1,51 @@
 page-home ion-content{
-    background-color: #EEE !important;
-ion-slide{
- 
-  ion-card{
-    border-radius: none;
-    width:100% !important;
+    background: url(../../assets/imgs/background.png) !important;
+    background-position: center  !important;
+    background-size: cover  !important;
+    color:#fff !important;
 
-    .button-md{
-      margin-top: 0px !important;
-      margin-bottom: 0px !important; 
-      border-radius: 0px !important;
-      
-      span{
-        font-weight: normal;
-        text-transform: none;
+
+    .tile{
+      .button-md{
+      // height: 140px !important;
+      // width: 140px !important;
+      // background: pink !important
+      height: none !important;
       }
+      // text-align: left;
+
+     
     }
-  }
 
+    #account-tile {
 
-}
-}
+      // float: right !important;
+      // margin-top: 100px !important ;
+      position: fixed;
+      bottom:0px;
+      right: 0px;
+     height:100px;
 
-.post-card{
-    // display: flex;
-    // flex-direction: column;
-    width: 95% !important;
-    // height: 135px !important;
-    border-radius: 6px;
-    // background-color: white !important;   
-    // box-shadow: none !important;
-  }
+    }
+    .welcome-row{
+      font-size: 9px;
 
-  .wrap-text {
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-}
-
-
-
-
-page-home{
-  ion-icon{
-    padding: 3px ;
-  }
-  ion-card-content{
-    font-size: 10px !important;
-    padding-left: 0px !important
-  }
-  ion-card-header{
-    font-size: 10px !important
-  }
- ion-note{
-   font-size: 8px !important;
- }
+     p{
+       margin-left: 20%;
+       margin-right: 20%;
+     }
+    }
 }
 
-.img-container{
-  max-width: 100% !important;
-  border-radius: 3px !important; 
+
+.tile{
+  button{
+  height: 100px ;
+  // width: 140px !important;
+  // background: pink !important
+
   }
-  
-.like{
-  color: red !important;
+  // text-align: left;
+
+ 
 }
