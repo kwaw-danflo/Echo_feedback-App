@@ -29,6 +29,7 @@ export class WelcomePage {
     
     ) {}
 
+
 goLogin(){
   this.app.getRootNav().push(LoginPage)
 }

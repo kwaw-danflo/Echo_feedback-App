@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http'; 
 
 import { InfoPage } from '../pages/info/info';
@@ -101,7 +102,8 @@ import { CampusProvider } from '../providers/campus/campus';
        
      ]
    }
-   )
+   ),
+   IonicStorageModule.forRoot()
     
   ],
   bootstrap: [IonicApp],
@@ -133,6 +135,7 @@ import { CampusProvider } from '../providers/campus/campus';
     usefulContactsPage
   ],
   providers: [
+
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},

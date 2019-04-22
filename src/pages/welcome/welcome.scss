@@ -12,8 +12,10 @@ ion-slide{
 }
 ion-slides{
     .swiper-pagination{
-        display: none;
+        // display: none;
+        bottom: 70px !important;
     }
+
     // top:0px;
 }
 
@@ -50,6 +52,7 @@ img{
     }
     p{
         font-size: 1.2rem;
+        line-height: 14px;
     }
 }
 

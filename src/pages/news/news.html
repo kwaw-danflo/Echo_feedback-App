@@ -5,7 +5,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content no-padding>
   <ion-card>
       <ion-slides  slidesPerView="3" spaceBetween="6">
 
@@ -80,18 +80,21 @@
     <ion-grid>
       <ion-row (click)="viewPost(post)">
         <ion-col col-9> 
-          <p style="font-weight:bolder !important">
+          <p style="font-weight:bolder !important" class="line-clamp">
           {{post.title}} 
           </p>
-        <ion-card-content class="wrap-text" no-padding>
-            <p [innerHTML]="post.content"></p>
+        <ion-card-content  no-padding>
+          <div class="wrap-text line-clamp">
+              <p [innerHTML]="post.content"></p>
+          </div>
+          
           </ion-card-content>
       </ion-col> 
         <ion-col col-3 >
             <img  src = {{post.imageLink}}  class="img-container"/>
         </ion-col> 
       </ion-row>
-      <ion-row>
+      <ion-row class="bottom-row"> 
         <ion-col col-9>
             <ion-note style="float: left !important" >TeamUni</ion-note>
             <ion-note style="float:right !important" >{{post.date | date}}</ion-note>

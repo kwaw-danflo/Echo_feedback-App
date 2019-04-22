@@ -17,13 +17,23 @@ import { dateDataSortValue } from 'ionic-angular/umd/util/datetime-util';
 export class HomePage {
   user= localStorage.getItem('user')
   today= Date.now();
-  constructor(public navCtrl: NavController, public app:App, private eleRef: ElementRef) {
+  // userID=localStorage.getItem('userID')
+  // userData: any = {};
+
+  constructor(public navCtrl: NavController, public app:App, private eleRef: ElementRef, private accountProvider: AccountProvider) {
     
 
 }
 
+// ionViewWillEnter(){
+//   this.accountProvider.getUserData(this.userID).then(data => {
+//     this.userData = data;
 
-goNews(id){
+//           localStorage.setItem('user', this.userData.firstName)
+//   })
+// }
+
+goNews(){
   document.getElementById('tab-t0-3').click();
   }
   goCampus(){

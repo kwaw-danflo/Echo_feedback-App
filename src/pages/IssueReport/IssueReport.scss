@@ -3,7 +3,43 @@ page-issue ion-content{
     background-size: cover;
     background-position: center;
 
+    form button{
+        color: #000 !important;
+        background-color: #fff !important;
+        margin-left:  auto !important;
+        margin-right: auto !important;
+        margin-top:  30px !important;
+    }
 
+    form ion-item{
+        background-color: transparent !important;
+    }
+
+    form ion-label{
+        color: #000 !important;
+    }
+
+    form{
+        width: 85% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        //margin-top: 30px !important;
+    }
+
+    ::placeholder{
+        color: #000 !important ;
+    }
+    ion-select {
+        button{
+            display: none !important;
+        }
+        
+    }
+
+    on-textarea{
+        // background: #6F9EBE;
+        border-radius: 10px;
+    }
 }
 // linear-gradient(#31B2F7 , #50E0DF) !important;
 .center
@@ -12,66 +48,11 @@ page-issue ion-content{
 }
 
 
- .no-scroll {
-     .scroll-content{
-    overflow-y: hidden !important;
-     }
-}
-
-page-issue form button{
-    color: #000 !important;
-    background-color: #fff !important;
-    margin-left:  auto !important;
-    margin-right: auto !important;
-    margin-top:  30px !important;
-}
-
-page-issue form ion-item
-{
-    background-color: transparent !important;
-}
-
-page-issue form ion-item
-{
-    background-color: transparent !important;
-}
-
-page-issue{
-
-    form ion-label
-{
-    color: #000 !important;
-}
-
-}
 
 
-page-issue form{
-    width: 85% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    //margin-top: 30px !important;
-}
-page-issue{
-    ::placeholder{
-        color: #000 !important ;
-    }
-
-}
 
 
-page-issue ion-select {
-    button{
-        display: none !important;
-    }
-    
-}
 
-
-page-issue on-textarea{
-    // background: #6F9EBE;
-    border-radius: 10px;
-}
 
 
 .my-item{
@@ -84,7 +65,7 @@ page-issue on-textarea{
 .header-text{
 
     text-align:justify; 
-    color:#000;
+    color:#fff;
     margin-left: 30px !important;
     margin-right: 30px !important;
     
