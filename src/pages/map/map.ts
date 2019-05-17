@@ -2,9 +2,9 @@ import { Component, ViewChild,ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { IonicPage } from 'ionic-angular';
 
-declare var google;
-
-@IonicPage()
+// declare var google;
+let google;
+ // @IonicPage()
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html'
