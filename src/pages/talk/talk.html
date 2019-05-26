@@ -1,13 +1,41 @@
 <ion-header>
-  <!-- <ion-navbar transparent>
-    <img src="../../assets/imgs/header.png" class="header-image">
-  </ion-navbar> -->
-</ion-header>
-
-<ion-content padding>
-<h4 style="text-align: left; font-weight:bold;">We still have some things <br>
-   cooking in the  <br>
-   oven for you</h4>
-
-<p style="text-align: left; margin-top: 20px; font-weight:100; " >UniTalk will provide students with a means to make calls over the campus student network at no charge. We’re working hard at making this a reality and we’ll notify you when UniTalk is ready.</p>
-</ion-content>
+    <!-- <ion-navbar transparent>
+      <img src="../../assets/imgs/header.png" class="header-image">
+    </ion-navbar> -->
+  </ion-header>
+  
+  <ion-content padding>
+  <!-- <h4 style="text-align: left; font-weight:bold;">We still have some things <br>
+     cooking in the  <br>
+     oven for you</h4>
+  
+  <p style="text-align: left; margin-top: 20px; font-weight:100; " >UniTalk will provide students with a means to make calls over the campus student network at no charge. We’re working hard at making this a reality and we’ll notify you when UniTalk is ready.</p> -->
+  
+  <img src="../../assets/imgs/UnitalkArt.png" alt="">
+  <div id="call-text">
+      <p><span>Welcome To</span><br><span>UniTalk</span></p>
+  </div>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col style="text-align: right !important"><button id="answer" ion-button clear  class="call-btn" ><img src="../../assets/imgs/acceptBtn.png" alt=""></button></ion-col> 
+      <ion-col><button id="terminate" ion-button clear  class="call-btn"><img src="../../assets/imgs/terminateBtn.png" alt=""></button></ion-col> 
+    </ion-row>
+  </ion-grid>
+  <!-- <ion-card class="contact-card"> -->
+  
+      <ion-list>
+          <button  (click)="call()" class="contact-btn" *ngFor="let contact of contacts" ion-item  color="light" detail-none> 
+            {{contact.name}}
+        </button> 
+  
+     
+  
+    
+      </ion-list>
+  
+      <audio autoplay id="remoteAudio"></audio>
+      <audio src="../../assets/sounds/incoming.mp3" id="incoming" loop></audio>
+      <audio src="../../assets/sounds/outgoing.mp3" id="outgoing" loop></audio>
+  </ion-content>
+  

@@ -4,6 +4,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http'; 
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+
 
 import { InfoPage } from '../pages/info/info';
 import { CampusPage } from '../pages/campus/campus';
@@ -38,8 +40,8 @@ import { InfoProvider } from '../providers/info/info';
 import { AuthenticationProvider } from '../providers/authentication/authentication';
 import { AccountProvider } from '../providers/account/account';
 import { IssueReportProvider } from '../providers/issue-report/issue-report';
-import { contentFormat } from '../pipes/content-format/content-format';
 import { CampusProvider } from '../providers/campus/campus';
+import { PollProvider } from '../providers/poll/poll';
 
 
 
@@ -70,7 +72,7 @@ import { CampusProvider } from '../providers/campus/campus';
      MapPage,
      WelcomePage,
      NewsPage,
-     contentFormat
+
      
   ],
   imports: [
@@ -80,28 +82,28 @@ import { CampusProvider } from '../providers/campus/campus';
       backButtonIcon: 'ios-arrow-back',
       backButtonText: '',
     }
-      , {
-      links: [
-       { component: HomePage, name: 'Home', segment: 'home' },
-       { component: AccountPage, name: 'Account', segment: 'account' },
-       { component: InfoPage, name: 'Info', segment: 'info' },
-       { component: CampusPage, name: 'Campus', segment: 'campus' },
-       { component: TalkPage, name: 'Talk', segment: 'talk' },
-       { component: LoginPage, name: 'Login', segment: 'login' },
-       { component: SignupPage, name: 'Signup', segment: 'signup' },
-       { component: ReportPage, name: 'issueReport', segment: 'issueReport' },
-       { component: infoChannelPage, name: 'infoChannel', segment: 'infoChannel' },
-       { component: usefulLinksPage, name: 'usefulLinks', segment: 'usefulLinks' },  
-       { component: TradePage, name: 'Trade', segment: 'trade' },  
-       { component: BookmarksPage, name: 'Bookmarks', segment: 'bookmarks' },   
-       { component: PollsPage, name: 'Polls', segment: 'polls' },   
-       { component: PostPage, name: 'Post', segment: 'post/:postId' },
-       { component: usefulContactsPage, name: 'usefulContacts', segment: 'usefulContacts' },
-       { component: infoDetailPage, name: 'infoDetail', segment: 'infoDetail/:infoId' },
-       { component: WelcomePage, name: 'welcome', segment: 'welcome' }
+  //     , {
+  //     links: [
+  //      { component: HomePage, name: 'Home', segment: 'home' },
+  //      { component: AccountPage, name: 'Account', segment: 'account' },
+  //      { component: InfoPage, name: 'Info', segment: 'info' },
+  //      { component: CampusPage, name: 'Campus', segment: 'campus' },
+  //      { component: TalkPage, name: 'Talk', segment: 'talk' },
+  //      { component: LoginPage, name: 'Login', segment: 'login' },
+  //      { component: SignupPage, name: 'Signup', segment: 'signup' },
+  //      { component: ReportPage, name: 'issueReport', segment: 'issueReport' },
+  //      { component: infoChannelPage, name: 'infoChannel', segment: 'infoChannel' },
+  //      { component: usefulLinksPage, name: 'usefulLinks', segment: 'usefulLinks' },  
+  //      { component: TradePage, name: 'Trade', segment: 'trade' },  
+  //      { component: BookmarksPage, name: 'Bookmarks', segment: 'bookmarks' },   
+  //      { component: PollsPage, name: 'Polls', segment: 'polls' },   
+  //      { component: PostPage, name: 'Post', segment: 'post/:postId' },
+  //      { component: usefulContactsPage, name: 'usefulContacts', segment: 'usefulContacts' },
+  //      { component: infoDetailPage, name: 'infoDetail', segment: 'infoDetail/:infoId' },
+  //      { component: WelcomePage, name: 'welcome', segment: 'welcome' }
        
-     ]
-   }
+  //    ]
+  //  }
    ),
    IonicStorageModule.forRoot()
     
@@ -132,7 +134,8 @@ import { CampusProvider } from '../providers/campus/campus';
     MapPage,
     WelcomePage,
     NewsPage,
-    usefulContactsPage
+    usefulContactsPage,
+
   ],
   providers: [
 
@@ -145,6 +148,8 @@ import { CampusProvider } from '../providers/campus/campus';
     AccountProvider,
     IssueReportProvider,
     CampusProvider,
+    PollProvider,
+    AndroidPermissions
     
   ]
 })

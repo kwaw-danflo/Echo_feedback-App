@@ -5,9 +5,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 
 
-@IonicPage({
-  name:'infoChannelPage'
-})
+// @IonicPage({
+//   name:'infoChannelPage'
+// })
 @Component({
   selector: 'page-infoChannel',
   templateUrl: 'infoChannel.html',

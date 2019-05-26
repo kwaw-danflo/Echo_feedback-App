@@ -5,7 +5,7 @@ import { AccountProvider } from '../../providers/account/account';
 
 import { clubsDetailPage  } from '../../pages/c&sDetail/c&sDetail';
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-clubs',
   templateUrl: 'clubs.html'

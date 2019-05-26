@@ -7,7 +7,7 @@ import{LocationsPage} from '../../pages/locations/locations'
 import { LoginPage } from '../login/login';
 import { CampusProvider } from '../../providers/campus/campus';
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-AtoZ',
   templateUrl: 'AtoZ.html'

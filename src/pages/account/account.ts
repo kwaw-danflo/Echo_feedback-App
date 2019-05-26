@@ -10,7 +10,7 @@ import{usefulContactsPage} from '../usefulContacts/usefulContacts';
 import { AccountProvider } from '../../providers/account/account';
 import { LoginPage } from '../login/login';
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-account',
   templateUrl: 'account.html'

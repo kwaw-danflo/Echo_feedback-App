@@ -3,8 +3,7 @@ import { NavController } from 'ionic-angular';
 import { IonicPage } from 'ionic-angular';
 
 declare var google;
-
-@IonicPage()
+ // @IonicPage()
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html'
