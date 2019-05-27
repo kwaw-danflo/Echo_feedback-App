@@ -4,6 +4,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http'; 
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+
 
 import { InfoPage } from '../pages/info/info';
 import { CampusPage } from '../pages/campus/campus';
@@ -38,10 +40,10 @@ import { InfoProvider } from '../providers/info/info';
 import { AuthenticationProvider } from '../providers/authentication/authentication';
 import { AccountProvider } from '../providers/account/account';
 import { IssueReportProvider } from '../providers/issue-report/issue-report';
-import { contentFormat } from '../pipes/content-format/content-format';
 import { CampusProvider } from '../providers/campus/campus';
 import { TalkProvider } from '../providers/talk/talk';
 
+import { PollProvider } from '../providers/poll/poll';
 
 
 
@@ -72,7 +74,7 @@ import { TalkProvider } from '../providers/talk/talk';
      MapPage,
      WelcomePage,
      NewsPage,
-     contentFormat
+
      
   ],
   imports: [
@@ -134,7 +136,8 @@ import { TalkProvider } from '../providers/talk/talk';
     MapPage,
     WelcomePage,
     NewsPage,
-    usefulContactsPage
+    usefulContactsPage,
+
   ],
   providers: [
 
@@ -147,7 +150,9 @@ import { TalkProvider } from '../providers/talk/talk';
     AccountProvider,
     IssueReportProvider,
     CampusProvider,
-    TalkProvider
+    TalkProvider,
+    PollProvider,
+    AndroidPermissions
     
   ]
 })

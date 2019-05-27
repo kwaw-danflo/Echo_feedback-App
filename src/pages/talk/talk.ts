@@ -10,9 +10,11 @@ import * as JsSIP from 'jssip'
   selector: 'page-talk',
   templateUrl: 'talk.html'
 })
-export class TalkPage {
 
-  socket
+export class TalkPage {
+  // @ViewChild('audioSrc') audio :ElementRef
+
+socket
 configuration
 ua
 eventHandlers
@@ -20,6 +22,7 @@ options
 session: any
 Remoteaudio
 answer
+decline
 outgoingAudio
 incomingAudio
 searchTerm: string = "";
@@ -39,6 +42,13 @@ contacts= []
     // });
   }
 
+//SIP 100 is Virgo's Laptop
+    //SIP 200 is Prince's Phone
+    //SIP 300 is Paschal's Phone
+    //SIP 400 is Danflo's Laptop
+
+
+
 
   ionViewDidEnter(){
     this.getContacts()
@@ -56,8 +66,8 @@ contacts= []
     var phoneStatus=document.getElementById('phoneStatus')
     // var Remoteaudio=document.getElementById('remoteAudio')  as HTMLElement
     this.outgoingAudio=document.getElementById('outgoing')  as HTMLElement
-    var answer=document.getElementById('answer')  as HTMLElement
-    var terminate=document.getElementById('terminate')
+    this.answer=document.getElementById('answer')  as HTMLElement
+    this.decline=document.getElementById('terminate')
     this.socket = new JsSIP.WebSocketInterface('wss://uniapp.ml:8089/ws');
     this.configuration = {
       sockets  : [ this.socket ],
@@ -95,8 +105,9 @@ contacts= []
         console.log('call failed with cause: '+ e.cause);
         var audioOut: any  = document.getElementById('outgoing')
         audioOut.pause()
-        terminate.classList.add("hide")
-        answer.classList.add("hide")
+        this.decline.classList.add("hide")
+        this.answer.classList.add("hide")
+        // this.terminate();
         
         
       },
@@ -105,8 +116,18 @@ contacts= []
         this.presentToast('Call has been Terminated')
         text.innerHTML="Welcome To";
         callName.innerHTML="UniTalk";
-        terminate.classList.add("hide")
-        answer.classList.add("hide")
+        this.decline.classList.add("hide")
+        this.answer.classList.add("hide")
+        // this.terminate();
+      },
+      'canceled': (e)=>  {
+        console.log('call cancelled with cause: '+ e.cause);
+        // this.presentToast('Call has been Terminated')
+        // text.innerHTML="Welcome To";
+        // callName.innerHTML="UniTalk";
+        // this.decline.classList.add("hide")
+        // this.answer.classList.add("hide")
+        // this.terminate();
       },
       'confirmed': (e)=>  {
         console.log('call confirmed');
@@ -136,16 +157,17 @@ contacts= []
     }
       this.session=newSession
 
-      terminate.addEventListener('click',()=>{
-        console.log(this.session)
-        if(this.session){
-          this.session.terminate();
-        terminate.classList.add("hide")
-        answer.classList.add("hide")
-        }
+      // terminate.addEventListener('click',()=>{
+      //   console.log(this.session)
+      //   if(this.session){
+      //     this.session.terminate();
+
+      //   terminate.classList.add("hide")
+      //   answer.classList.add("hide")
+      //   }
         
         
-      }) 
+      // }) 
         document.getElementById('terminate').addEventListener('click',()=>{
         if(this.session){
         this.session.terminate();
@@ -156,44 +178,48 @@ contacts= []
         }}) 
       console.log('new')
       console.log(e)
+      
       if (e.originator === 'local') {
         console.log('outgoing call')
-        terminate.classList.toggle("hide")
-        this.session.connection.onaddstream = (e)=>
-        {
-          console.log(e)
-          console.log(e.stream)
-          var audioRemote: any = document.getElementById('remoteAudio')
-          audioRemote.srcObject = e.stream
-    
-        }
+        this.decline.classList.toggle("hide")
+
         }
         else if (e.originator === 'remote') {
-        console.log('Incomingcall');
-        console.log(e.request.from._display_name);
-        text.innerHTML="Incoming";
-        callName.innerHTML= e.request.from._display_name;
-        terminate.classList.toggle("hide")
-        answer.classList.toggle("hide")
-        var incomingCall: any = document.getElementById('incoming')
-        incomingCall.play()
-        
-        answer.addEventListener('click',()=>{
-          var incoming: any = document.getElementById('incoming')
-          incoming.pause()
-          console.log(this.session)
-          this.session.answer();
-          this.session.connection.onaddstream = function(e)
-    {
-      console.log(e)
-      console.log(e.stream)
-      var audioRemote: any = document.getElementById('remoteAudio')
-      audioRemote.srcObject = e.stream
-    
 
-    }
-          
-        })}
+          if(this.session._is_canceled == false){
+
+
+            console.log('Incomingcall');
+            console.log( this.session._is_canceled)
+             console.log(e.request.from._display_name);
+             text.innerHTML="Incoming";
+             callName.innerHTML= e.request.from._display_name;
+             this.decline.classList.toggle("hide")
+             this.answer.classList.toggle("hide")
+             var incomingCall: any = document.getElementById('incoming')
+             incomingCall.play()
+             if(this.session._is_canceled)
+             {
+               this.terminate;
+             }
+             this.answer.addEventListener('click',()=>{
+               var incoming: any = document.getElementById('incoming')
+               incoming.pause()
+               console.log(this.session)
+               this.session.answer();
+               this.session.connection.onaddstream = function(e){
+           console.log(e)
+           console.log(e.stream)
+           var audioRemote: any = document.getElementById('remoteAudio')
+           audioRemote.srcObject = e.stream
+         
+     
+         }
+               
+             }
+             )
+          }
+  }
       })
 
  
@@ -205,6 +231,19 @@ contacts= []
     document.getElementById('callName').innerHTML=contact.name
     var outgoingcall: any = document.getElementById('outgoing')
     outgoingcall.play()
+
+  }
+  terminate(){
+    console.log(this.session)
+    if(this.session){
+      this.session.terminate();
+      this.session= null;
+      var audioOut: any  = document.getElementById('incoming')
+      audioOut.pause()
+    this.decline.classList.add("hide")
+    this.answer.classList.add("hide")
+    }
+    
 
   }
   presentToast(msg) {

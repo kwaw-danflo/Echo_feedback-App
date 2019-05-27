@@ -27,30 +27,32 @@
       
       <div [ngSwitch]="polls" no-lines>
         <ion-list *ngSwitchCase="'Recent'">
-         
-          <ion-card class="poll-card">
+         <div *ngFor = "let result of pollList">
+          <ion-card class="poll-card" (click)="pollResult(result)">
             <ion-card-content>
-              <p class="question">Should the University invest in more shuttles?</p>
+              <p class="question">{{result.topic}}</p>
             </ion-card-content>
           </ion-card>
-        
-            
+          </div>
         </ion-list>
-      
+            
+  
         <ion-list *ngSwitchCase="'Active'">
-         
-            <ion-card class="poll-card" (click)="replyPoll()">
+         <div *ngFor= "let poll of pollList">
+            <ion-card class="poll-card" (click)="replyPoll(poll)">
                 <ion-card-content>
                  
-                    <p class="question">Should the University invest in more shuttles?</p>
+                    <p class="question">{{poll.topic}}</p>
                     
                   
                   
                    
                 </ion-card-content>
-              </ion-card>
-            
+              </ion-card> 
+            </div>
         </ion-list>
+      
+      
       </div>
 
 </ion-content>
