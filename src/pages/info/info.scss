@@ -32,6 +32,8 @@ page-info ion-content {
       text-transform: none ;
       width: 90px;
       overflow: visible;
+      display: flex;
+      flex-wrap: wrap;
       span{
         font-weight: normal;
         font-size: 1em;

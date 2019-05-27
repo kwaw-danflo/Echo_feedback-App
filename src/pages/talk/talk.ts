@@ -13,7 +13,7 @@ import * as JsSIP from 'jssip'
 
 export class TalkPage {
   // @ViewChild('audioSrc') audio :ElementRef
-
+interval=null;
 socket
 configuration
 ua
@@ -25,6 +25,8 @@ answer
 decline
 outgoingAudio
 incomingAudio
+callName
+text
 searchTerm: string = "";
 searchControl: FormControl;
 searching: any = false;
@@ -61,8 +63,8 @@ contacts= []
         this.setFilteredItems(search);
       });
 
-    var text=document.getElementById('text')
-    var callName=document.getElementById('callName')
+    this.text=document.getElementById('text')
+    this.callName=document.getElementById('callName')
     var phoneStatus=document.getElementById('phoneStatus')
     // var Remoteaudio=document.getElementById('remoteAudio')  as HTMLElement
     this.outgoingAudio=document.getElementById('outgoing')  as HTMLElement
@@ -100,13 +102,14 @@ contacts= []
           this.presentToast('User cannot be reached')
         }
         
-        text.innerHTML="Welcome To";
-        callName.innerHTML="UniTalk";
+        this.text.innerHTML="Welcome To";
+        this.callName.innerHTML="UniTalk";
         console.log('call failed with cause: '+ e.cause);
         var audioOut: any  = document.getElementById('outgoing')
         audioOut.pause()
         this.decline.classList.add("hide")
         this.answer.classList.add("hide")
+        this.session=null;
         // this.terminate();
         
         
@@ -114,14 +117,17 @@ contacts= []
       'ended': (e)=>  {
         console.log('call ended with cause: '+ e.cause);
         this.presentToast('Call has been Terminated')
-        text.innerHTML="Welcome To";
-        callName.innerHTML="UniTalk";
+        this.text.innerHTML="Welcome To";
+        this.callName.innerHTML="UniTalk";
         this.decline.classList.add("hide")
         this.answer.classList.add("hide")
+        this.session=null
         // this.terminate();
       },
       'canceled': (e)=>  {
         console.log('call cancelled with cause: '+ e.cause);
+        var audioIn: any = document.getElementById('incoming')
+        audioIn.pause()
         // this.presentToast('Call has been Terminated')
         // text.innerHTML="Welcome To";
         // callName.innerHTML="UniTalk";
@@ -131,7 +137,7 @@ contacts= []
       },
       'confirmed': (e)=>  {
         console.log('call confirmed');
-        text.innerHTML="Connected To";
+        this.text.innerHTML="Connected To";
         var audioOut: any = document.getElementById('outgoing')
         audioOut.pause()
         // this.presentToast('In call');
@@ -153,7 +159,7 @@ contacts= []
       var newSession=e.session
 
       if(this.session){
-        this.session.terminate();
+        this.session=null;
     }
       this.session=newSession
 
@@ -171,8 +177,8 @@ contacts= []
         document.getElementById('terminate').addEventListener('click',()=>{
         if(this.session){
         this.session.terminate();
-        text.innerHTML="Welcome To";
-        callName.innerHTML="UniTalk";
+        this.text.innerHTML="Welcome To";
+        this.callName.innerHTML="UniTalk";
         
         
         }}) 
@@ -185,15 +191,24 @@ contacts= []
 
         }
         else if (e.originator === 'remote') {
-
+          //  this.session.on.cancel
           if(this.session._is_canceled == false){
 
 
             console.log('Incomingcall');
-            console.log( this.session._is_canceled)
+            
+            this.interval=setInterval(()=>{ 
+              console.log('checked')
+              var stat=this.session.isInProgress();
+              if(this.session.isInProgress()==false){
+
+                this.completeSession();
+              }
+
+             }, 3000);
              console.log(e.request.from._display_name);
-             text.innerHTML="Incoming";
-             callName.innerHTML= e.request.from._display_name;
+             this.text.innerHTML="Incoming";
+             this.callName.innerHTML= e.request.from._display_name;
              this.decline.classList.toggle("hide")
              this.answer.classList.toggle("hide")
              var incomingCall: any = document.getElementById('incoming')
@@ -236,15 +251,31 @@ contacts= []
   terminate(){
     console.log(this.session)
     if(this.session){
-      this.session.terminate();
-      this.session= null;
-      var audioOut: any  = document.getElementById('incoming')
+     
+      // this.session= null;
+      var audioOut: any  = document.getElementById('outgoing')
       audioOut.pause()
+      
+      
+
     this.decline.classList.add("hide")
     this.answer.classList.add("hide")
+   
     }
     
 
+  }
+  completeSession(){
+    var audioIn: any = document.getElementById('incoming')
+    audioIn.pause()
+    clearInterval(this.interval);
+  
+    this.text.innerHTML="Welcome To";
+    this.callName.innerHTML="UniTalk";
+    this.decline.classList.add("hide");
+    this.answer.classList.add("hide");
+    this.session= null;
+     
   }
   presentToast(msg) {
     let toast = this.toastCtrl.create({
@@ -325,5 +356,9 @@ getContacts(){
   });
 
 }
+
+// checkConnection(flag){
+
+// }
 }
 
