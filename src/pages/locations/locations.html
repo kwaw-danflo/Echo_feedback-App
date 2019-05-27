@@ -12,64 +12,25 @@
 
         <ion-grid no-padding>
             <ion-row style=" margin:10px">
-                <ion-col col-10>   <p class="location-header">{{location.name}}</p> </ion-col>
-                <ion-col col-2 ><button ion-button class="locate-btn" clear > <img src="../../assets/imgs/find-btn.png"></button></ion-col>
-            </ion-row>
-            <ion-row>
-                <img src={{location.imageLink}}>
-            </ion-row>
+               <ion-list>
+                 <ion-item>
+                   <h2>Bank 1</h2>
+                   <button ion-button clear item-end>View on Map</button>
+                 </ion-item>
 
-           
+                 <ion-item>
+                    <h2>Bank 2</h2>
+                    <button ion-button clear item-end>View on Map</button>
+                  </ion-item>
 
-            <div class="content-row">
-               <!-- <ion-row class="align">
-
-                 <ion-col col-4 class="header-col" >
-                    <p>Working Hours: </p>
-                 </ion-col>
-
-                 <ion-col col-8>
-                    <p>Mon - Fri 8:00am - 4:00pm <br>
-                       Sat 8:00am - 2:00pm 
-                    </p>
-                 </ion-col>
-                 
-               </ion-row>
-
-               <ion-row class="align">
-
-                <ion-col col-4 class="header-col" >
-                  <p>Contact: </p> 
-                </ion-col>
-
-                <ion-col col-8>
-                  <p>
-                      +233 544678994 <br>
-                      +233 244900880
-                  </p>
-                </ion-col>
-                  
-               </ion-row> -->
-
-              <ion-row class="align">
-
-                <!-- <ion-col col-4 class="header-col" >
-                  <p>Services: </p> 
-                </ion-col> -->
-
-                <ion-col>
-                  <p [innerHTML] = "location.description"></p>
-                   
-                
-                </ion-col>
-                  
+               </ion-list>
                </ion-row>
                  
                 
 
           
 
-              </div>
+  
 
 
         </ion-grid>

@@ -45,7 +45,7 @@ contacts=[
     this.socket = new JsSIP.WebSocketInterface('wss://uniapp.ml:8089/ws');
     this.configuration = {
       sockets  : [ this.socket ],
-      uri      : 'sip:200@uniapp.ml',
+      uri      : 'sip:500@uniapp.ml',
       password : 'jollof'
     };
     
@@ -113,8 +113,14 @@ contacts=[
         }
         else if (e.originator === 'remote') {
         console.log('Incomingcall');
+        console.log("Event is: ", e)
+        console.log("Session is ", session.isInProgress())
         var incomingCall: any = document.getElementById('incoming')
+        while(session.isInProgress() == true){
         incomingCall.play()
+        }
+   
+        
         
         document.getElementById('answer').addEventListener('click',function(){
           var incoming: any = document.getElementById('incoming')
@@ -150,6 +156,7 @@ contacts=[
     //SIP 200 is Prince's Phone
     //SIP 300 is Paschal's Phone
     //SIP 400 is Danflo's Laptop
+    //SIP 500 is Beryl
   }
 
 

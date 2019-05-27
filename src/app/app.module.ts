@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http'; 
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
 
 
 import { InfoPage } from '../pages/info/info';
@@ -149,7 +150,8 @@ import { PollProvider } from '../providers/poll/poll';
     IssueReportProvider,
     CampusProvider,
     PollProvider,
-    AndroidPermissions
+    AndroidPermissions,
+    LaunchNavigator
     
   ]
 })
