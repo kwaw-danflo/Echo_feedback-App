@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 
 
 import { PostPage } from '../post/post';
+import{CampusPage} from '../campus/campus'
 import { PostProvider } from '../../providers/post/post';
 
 @Component({
@@ -66,6 +67,5 @@ e.target.classList.toggle("ion-md-heart")
 e.target.classList.toggle("ion-ios-bookmark-outline")
 e.target.classList.toggle("ion-ios-bookmark")
   }
-  
 }
 

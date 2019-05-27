@@ -38,7 +38,7 @@
 </div> -->
 
     <ion-list no-lines>
-      <button *ngFor="let child of childPages" ion-item color="light" detail-none class="list-button" (click)="getCategory(child.title)">
+      <button *ngFor="let child of childPages" ion-item color="light" detail-none class="list-button" (click)="getCategory(child.title)" [id]="child.id">
         <ion-icon [name]="child.icon" item-end></ion-icon>
         {{child.title}}
       </button>

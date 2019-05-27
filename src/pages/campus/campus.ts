@@ -16,7 +16,7 @@ export class CampusPage {
 
   }
   childPages=[{
-    'id':1,
+    'id':'banks',
     'icon':'cash',
     'title':'Banks and ATMs',
     'class' :'',
@@ -24,52 +24,52 @@ export class CampusPage {
   
   },
   {
-    'id':2,
+    'id':'departments',
     'icon':'home',
     'title':'Departments',
     'class':''
   },
   {
-    'id':3,
+    'id':'eateries',
     'icon':'restaurant',
     'title':'Eateries & Vendors',
     'class':''
   },
 
   {
-    'id':4,
+    'id':'halls',
     'icon':'home',
     'title':'Halls of Residence',
     'class':''
   },
   {
-    'id':5,
+    'id':'hair',
     'icon':'home',
     'title':'Hair & Beauty',
     'class':''
   },
   {
-    'id':6,
+    'id':'health',
     'icon':'medkit',
     'title':'Health Care',
     'class':''
   },
   {
-    'id':7,
+    'id':'worship',
     'icon':'home',
     'title':'Places of Worship',
     'class':''
     
   },
   {
-    'id':8,
+    'id':'sports',
     'icon':'basketball',
     'title':'Sports & Recreation',
     'class':''
     
   },
   {
-    'id':9,
+    'id':'supermarkets',
     'icon':'cash',
     'title':'Supermarkets',
     'class':''
@@ -94,6 +94,10 @@ goClubs(){
  }
  goMap(){
   this.navCtrl.push(MapPage)
+ }
+
+ goCategory(id){
+  document.getElementById(id).click()
  }
 
 }

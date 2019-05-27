@@ -11,7 +11,7 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any= LoginPage;
+  rootPage:any= WelcomePage;
   
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public storage:Storage) {
@@ -20,17 +20,24 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault(); 
       splashScreen.hide();
+
+      this.storage.get('introShown').then((result) => {
+        if (result==true) {
+          ;
+          this.rootPage=LoginPage
+        }
+  
+        else{
+         this.storage.set('introShown', true)
+        }
+      
+       })
     });
+
+
   }
 
   // ionViewWillEnter(){
-  //   this.storage.get('introShown').then((result) => {
-  
-  //     if (!result) {
-  //       this.storage.set('introShown', true);
-  //       this.rootPage=WelcomePage
-  //     }
-    
-  //    })
+
   //   }
 }

@@ -40,6 +40,8 @@ import { AccountProvider } from '../providers/account/account';
 import { IssueReportProvider } from '../providers/issue-report/issue-report';
 import { contentFormat } from '../pipes/content-format/content-format';
 import { CampusProvider } from '../providers/campus/campus';
+import { TalkProvider } from '../providers/talk/talk';
+
 
 
 
@@ -145,6 +147,7 @@ import { CampusProvider } from '../providers/campus/campus';
     AccountProvider,
     IssueReportProvider,
     CampusProvider,
+    TalkProvider
     
   ]
 })
