@@ -18,7 +18,7 @@
         <h2 class="color">{{userData.firstName}} {{userData.lastName}}</h2>
         <h3 class="color">{{userData.email}}</h3>
         <h4 class="color">{{userData.studentID}}</h4>
-        <button style="float:right"ion-button color="light" class="my-btn">edit</button>
+        <!-- <button style="float:right"ion-button color="light" class="my-btn">edit</button> -->
       </ion-col> 
     </ion-row>
   </ion-grid>
@@ -29,41 +29,6 @@
         <ion-icon [name]="child.icon" item-start></ion-icon>
         {{child.title}}
     </button> 
-    <!-- <button ion-item  color="light" (click)= "goBookmark()"> 
-        <ion-icon name="bookmark" item-start></ion-icon>
-        Bookmarks
-    </button>  -->
-
-    <!-- <button ion-item   color="light" (click)= "goInfo()">
-        <ion-icon name="notifications" item-start></ion-icon>
-        Information Channels
-    </button> 
-
-    <button ion-item  color="light" (click) = "goIssue()">
-        <ion-icon name="information-circle" item-start></ion-icon>
-        Report an Issue 
-    </button> 
-
-    <button ion-item   color="light" (click)= "goPolls()">
-        <ion-icon name="stats" item-start></ion-icon>
-       Polls & Surveys 
-    </button> 
-
-    <button ion-item   color="light" (click)= "goTrade()">
-        <ion-icon name="cash" item-start></ion-icon>
-       Uni Trade Account 
-    </button> 
-
-    <button ion-item   color="light" (click)= "goLinks()">
-        <ion-icon name="laptop" item-start></ion-icon>
-        Useful Links 
-    </button> 
-
-    <button ion-item   color="light" detail="true" (click)= "goContacts()">
-        <ion-icon name="call" item-start></ion-icon>
-        Useful Contacts
-    </button> 
-     -->
 
  
   <button ion-item color="light" detail="true" (click) = "logout()"  class="account-list-button">

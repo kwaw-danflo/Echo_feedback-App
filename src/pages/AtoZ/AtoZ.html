@@ -2,25 +2,25 @@
   <ion-navbar>
     <img src="../../assets/imgs/header.png" class="header-image">
   </ion-navbar>
-</ion-header>
-
-<ion-content>
-
-   
+ </ion-header>
+ 
+ <ion-content>
+ 
+  
         <ion-searchbar placeholder="What are you looking for?"></ion-searchbar>
+  
    
-    
-
-<ion-list no-lines *ngFor = "let location of locationList" >
+ 
+ <ion-list no-lines *ngFor = "let location of locationList" >
       <button ion-item color="light" (click)="routeMe(location)" class=" list-button">
           <ion-avatar item-start style="height:15px !important; width:15px ! important">
               <img src={{location.imageLink}}>
             </ion-avatar>
         {{location.name}}
-    </button> 
-</ion-list>
-
-
+    </button>
+ </ion-list>
+ 
+ 
     <!-- <ion-list no-lines >
             <button ion-item  color="light" (click)="routeMe()" class=" list-button">
                 <ion-avatar item-start style="height:15px !important; width:15px ! important">
@@ -28,3 +28,7 @@
                   </ion-avatar>
               African Bank Ghana Limited
           </button>  -->
+ 
+ 
+ 
+ 

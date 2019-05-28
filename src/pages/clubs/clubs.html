@@ -3,59 +3,71 @@
     <img src="../../assets/imgs/header.png" class="header-image">
     <!-- <ion-title>Account</ion-title>   -->
   </ion-navbar>
-</ion-header>
-
-<ion-content>
-
-   
+ </ion-header>
+ 
+ <ion-content>
+ 
+  
         <ion-searchbar placeholder="What are you looking for?"></ion-searchbar>
+  
    
-    
-
-<ion-list no-lines >
-      <button ion-item  color="light" (click)="viewClub()" class=" list-button">
+ 
+ <ion-list no-lines >
+      <button  *ngFor="let child of childPages" ion-item  color="light" (click)="viewClub(child)" class=" list-button">
           <ion-avatar item-start style="height:15px !important; width:15px ! important">
-              <img src="../../assets/imgs/debaters.jpeg">
+              <img [src]="child.imageLink">
             </ion-avatar>
-        Debate and Writers Club UG
-    </button> 
-    <!-- <button ion-item  color="light" (click)= "goBookmark()"> 
+        {{child.name}}
+    </button>
+ 
+    <!-- <button ion-item  color="light" (click)="viewClub()" class=" list-button">
+        <ion-avatar item-start style="height:15px !important; width:15px ! important">
+            <img src="../../assets/imgs/debaters.jpeg">
+          </ion-avatar>
+      Students Representative Council
+  </button>  -->
+ 
+ 
+    <!-- <button ion-item  color="light" (click)= "goBookmark()">
         <ion-icon name="bookmark" item-start></ion-icon>
         Bookmarks
     </button>  -->
-
+ 
     <!-- <button ion-item   color="light" (click)= "goInfo()">
         <ion-icon name="notifications" item-start></ion-icon>
         Information Channels
-    </button> 
-
+    </button>
+ 
     <button ion-item  color="light" (click) = "goIssue()">
         <ion-icon name="information-circle" item-start></ion-icon>
-        Report an Issue 
-    </button> 
-
+        Report an Issue
+    </button>
+ 
     <button ion-item   color="light" (click)= "goPolls()">
         <ion-icon name="stats" item-start></ion-icon>
-       Polls & Surveys 
-    </button> 
-
+       Polls & Surveys
+    </button>
+ 
     <button ion-item   color="light" (click)= "goTrade()">
         <ion-icon name="cash" item-start></ion-icon>
-       Uni Trade Account 
-    </button> 
-
+       Uni Trade Account
+    </button>
+ 
     <button ion-item   color="light" (click)= "goLinks()">
         <ion-icon name="laptop" item-start></ion-icon>
-        Useful Links 
-    </button> 
-
+        Useful Links
+    </button>
+ 
     <button ion-item   color="light" detail="true" (click)= "goContacts()">
         <ion-icon name="call" item-start></ion-icon>
         Useful Contacts
-    </button> 
+    </button>
      -->
-
-
-
+ 
+ 
+ 
   </ion-list>
-</ion-content>
+ </ion-content>
+ 
+ 
+ 

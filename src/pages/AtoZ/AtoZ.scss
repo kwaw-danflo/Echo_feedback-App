@@ -3,43 +3,43 @@ page-AtoZ ion-content {
     background-size: cover;
     background-position: center;
     color: #fff !important;
-    
-}
-
-
-// ion-avatar,
-// ion-avatar > img{
-//     border-radius:50%;
-//     height:100px;
-//     width:100px;
-// }
-
-.my-btn{
+   
+ }
+ 
+ 
+ // ion-avatar,
+ // ion-avatar > img{
+ //     border-radius:50%;
+ //     height:100px;
+ //     width:100px;
+ // }
+ 
+ .my-btn{
     width: 50px !important;
     height:  15px !important;
-}
-.color{
+ }
+ .color{
     color: #EEE !important;
-}
-
-// page-AtoZ ion-icon{
-//     color: #31B2F7 !important;
-// }
-
+ }
+ 
+ // page-AtoZ ion-icon{
+ //     color: #31B2F7 !important;
+ // }
+ 
  .list-button{
-
+ 
     // margin-right: 10px !important ;
-    border-radius: 5px !important; 
+    border-radius: 5px !important;
     margin-left: auto !important;
     margin-right: auto !important;
     width:  90% !important;
     margin-bottom: 10px !important;
     margin-top: 10px !important;
-     height: 9vh; 
-}
-
-
-page-AtoZ{
+     height: 9vh;
+ }
+ 
+ 
+ page-AtoZ{
     ion-searchbar{
         background: none !important;
         border-bottom: 1px solid white !important;
@@ -49,10 +49,10 @@ page-AtoZ{
         margin-bottom: 7% !important;
         width: 200px !important;
         padding-bottom: 1px !important;
-        
+       
         // padding: 0px !important;
-        
-        
+       
+       
     input{
         background: transparent !important;
         padding-right: 0px !important;
@@ -60,11 +60,13 @@ page-AtoZ{
         padding-bottom: 1px !important;
         padding-left: 35px !important;
     }
-   
+  
     ::placeholder{
         color: #fff !important;
     }
-
-
-}
-}
+ 
+ 
+ }
+ }
+ 
+ 

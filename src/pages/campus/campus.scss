@@ -2,22 +2,24 @@ page-campus ion-content {
     background-image:url(../../assets/imgs/polls-bg.png) ;
     background-size: cover;
     background-position: center;
-
+ 
     .headBtn{
         height: 110px !important;
         padding: 0px;
-        
+       
     }
-}
-
-
-
-.listBtn{
+ }
+ 
+ 
+ 
+ .listBtn{
     border-radius: 5px;
     height: 8px !important;
-}
-page-campus{
+ }
+ page-campus{
     ion-icon{
         color: #000 !important;
     }
-}
+ }
+ 
+ 

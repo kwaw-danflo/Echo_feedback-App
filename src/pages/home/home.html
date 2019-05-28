@@ -9,25 +9,25 @@
     <img src="../../assets/imgs/whitelogo.png" class="header-image">
  <ion-grid padding>
    <ion-row class="welcome-row">
-     <ion-col col-6  style="text-align:left"> 
-       <p>welcome <br>
+     <ion-col col-6 class="mg-left" style="text-align:left"> 
+       <p style="font-size: 1.5em;">Welcome, <br>
         {{user}}
       </p>
      </ion-col>  
-     <ion-col col-6  style="text-align:left"> 
-        <p> {{today | date: 'EEE'}} <br>
+     <ion-col class="mg-right" col-6  style="text-align:left"> 
+        <p style="font-size: 1.5em;"> {{today | date: 'EEE'}} <br>
           {{today | date}}
         </p>
      </ion-col>
    </ion-row>
 
-   <ion-row>
-      <ion-col class="tile" col-6> <button  ion-button clear (click)="goCampus()"> <img src="../../assets/imgs/campus-tile.png" ></button></ion-col>
-      <ion-col col-6 class="tile"> <button ion-button clear (click)="goTalk()"> <img src="../../assets/imgs/talk-tile.png" ></button></ion-col>
+   <ion-row style="margin-bottom:-13px;">
+      <ion-col class="tile mg-left" col-6> <button style="width:100%;height: 100%;" ion-button clear (click)="goCampus()"> <img src="../../assets/imgs/campus-tile.png" ></button></ion-col>
+      <ion-col col-6 class="tile mg-right"> <button style="width:100%;height: 100%;" ion-button clear (click)="goTalk()"> <img src="../../assets/imgs/talk-tile.png" ></button></ion-col>
     </ion-row>
-    <ion-row>
-        <ion-col col-6 class="tile"> <button  ion-button clear (click)="goInfo()"> <img src="../../assets/imgs/info-tile.png" ></button></ion-col>
-        <ion-col col-6 class="tile"> <button ion-button clear (click)="goNews()"> <img    src="../../assets/imgs/news-tile.png" > </button></ion-col>
+    <ion-row style="margin-top:-13px;">
+        <ion-col col-6 class="tile mg-left"> <button style="width:100%;height: 100%;" ion-button clear (click)="goInfo()"> <img src="../../assets/imgs/info-tile.png" ></button></ion-col>
+        <ion-col col-6 class="tile mg-right"> <button style="width:100%;height: 100%;" ion-button clear (click)="goNews()"> <img    src="../../assets/imgs/news-tile.png" > </button></ion-col>
       </ion-row>
  </ion-grid>
  <button ion-button clear id="account-tile" (click)="goAccount()" >  <img   src="../../assets/imgs/account-tile.png" ></button>

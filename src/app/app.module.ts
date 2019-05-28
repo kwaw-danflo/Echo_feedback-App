@@ -42,6 +42,8 @@ import { AuthenticationProvider } from '../providers/authentication/authenticati
 import { AccountProvider } from '../providers/account/account';
 import { IssueReportProvider } from '../providers/issue-report/issue-report';
 import { CampusProvider } from '../providers/campus/campus';
+import { TalkProvider } from '../providers/talk/talk';
+
 import { PollProvider } from '../providers/poll/poll';
 
 
@@ -149,6 +151,7 @@ import { PollProvider } from '../providers/poll/poll';
     AccountProvider,
     IssueReportProvider,
     CampusProvider,
+    TalkProvider,
     PollProvider,
     AndroidPermissions,
     LaunchNavigator

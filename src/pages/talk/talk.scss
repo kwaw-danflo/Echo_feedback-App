@@ -4,6 +4,14 @@ page-talk ion-content {
     background-position: center;
     color: #fff !important;
 
+    // .scroll-content {
+    //     overflow: hidden;
+    //   }
+
+
+      ion-scroll{
+          height: 50%;
+      }
     .call-btn{
         height: 80px !important;
         padding: 0px;
@@ -32,6 +40,31 @@ page-talk ion-content {
         }
         
     }
+
+    #talk-img{
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .hide{
+        // display: none;
+    }
+
+    
+
+    // .scroll-it{
+    //     overflow: scroll;
+    // }
+    .spinner-container {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+      }
+
+      ion-fab{
+          top:40px !important;
+          right: 40px !important;
+      }
 }
 
 page-talk{

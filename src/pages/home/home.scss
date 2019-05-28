@@ -5,6 +5,16 @@ page-home ion-content{
     color:#fff !important;
 
 
+.mg-left{
+  margin-left:25px;
+  margin-right:-25px;
+}
+
+.mg-right{
+  margin-left:-25px;
+  margin-right:25px;
+}
+
     .tile{
       .button-md{
       // height: 140px !important;
@@ -35,6 +45,11 @@ page-home ion-content{
        margin-right: 20%;
      }
     }
+}
+
+.tile {
+  img{height: 140%;
+  width: 120%;}
 }
 
 

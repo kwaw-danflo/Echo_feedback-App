@@ -6,7 +6,7 @@
 </ion-header>
 
 <ion-content no-padding>
-  <ion-card>
+  <!-- <ion-card>
       <ion-slides  slidesPerView="3" spaceBetween="6">
 
           <ion-slide >
@@ -64,7 +64,7 @@
                     </ion-row>
                     <ion-row >
                       
-                      <button ion-button block mode="md" style=" background:linear-gradient(#FFE206, #FFBC09) ">Eateries</button>
+                      <button ion-button block mode="md" style=" background:linear-gradient(#FFE206, #FFBC09)" (click)="eateries()">Eateries</button>
                       </ion-row>
                   </ion-grid>  
                   
@@ -72,7 +72,7 @@
                   </ion-card>
           </ion-slide>
         </ion-slides>
-  </ion-card>
+  </ion-card> -->
   
 
 <div *ngFor="let post of postList; let i= index">

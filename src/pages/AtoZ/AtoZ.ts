@@ -9,31 +9,30 @@ import { CampusProvider } from '../../providers/campus/campus';
 
 // @IonicPage()
 @Component({
-  selector: 'page-AtoZ',
-  templateUrl: 'AtoZ.html'
+ selector: 'page-AtoZ',
+ templateUrl: 'AtoZ.html'
 })
 export class AtoZPage {
-  
   locationList: any;
+category: string = '';
+ constructor(public app: App,public navCtrl: NavController, public navParams: NavParams, public campusProvider: CampusProvider) {
+  this.category = this.navParams.get("title");
+  this.filterLocation();
  
- category: string = '';
-  constructor(public app: App,public navCtrl: NavController, public navParams: NavParams, public campusProvider: CampusProvider) {
-   this.category = this.navParams.get("title");
-   this.filterLocation();
-   
-  }
-  
-  filterLocation(){
-    this.campusProvider.filterLocation(this.category).then(data => {
-      this.locationList = data;
-      console.log(data);
-    });
-   
-  }
-
- routeMe(location){
-   this.navCtrl.push(LocationsPage,{location:location});
  }
+  filterLocation(){
+   this.campusProvider.filterLocation(this.category).then(data => {
+     this.locationList = data;
+     console.log(data);
+   });
+ 
+ }
+
+routeMe(location){
+  this.navCtrl.push(LocationsPage,{location:location});
+}
 
 
 }
+
+
